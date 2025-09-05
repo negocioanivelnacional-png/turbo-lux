@@ -3,240 +3,519 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacotes de Seguidores - Turbo Lux</title>
+    <title>TURBO SEGUIDORES - Aumente suas Redes Sociais AGORA!</title>
     <style>
+        :root {
+            --primary: #ff003c;
+            --secondary: #0033cc;
+            --accent: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
         }
         
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
         header {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
         }
         
         h1 {
             font-size: 2.5rem;
+            text-transform: uppercase;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .packages-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        
-        .package {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            width: 100%;
-            max-width: 550px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .package:hover {
-            transform: translateY(-5px);
-        }
-        
-        .package-header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .package-title {
+        h2 {
             font-size: 1.8rem;
-            color: #6a11cb;
-            margin-bottom: 5px;
+            color: var(--primary);
+            margin: 20px 0;
+            text-transform: uppercase;
         }
         
-        .package-price {
-            font-size: 1.2rem;
-            color: #2575fc;
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin: 15px 0;
         }
         
-        .quality-normal .package-title {
-            color: #6a11cb;
+        .headline {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            color: var(--primary);
         }
         
-        .quality-premium .package-title {
-            color: #ff9900;
+        .subheadline {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary);
         }
         
-        .quality-premium .package-price {
-            color: #ff9900;
+        .urgency {
+            background-color: var(--accent);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            border: 2px dashed var(--primary);
         }
         
-        .package-table {
+        .pricing-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         
-        .package-table th, .package-table td {
+        .pricing-table th {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .pricing-table td {
             padding: 12px 15px;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
         
-        .package-table th {
-            background-color: #f8f9fa;
-            font-weight: 600;
+        .pricing-table tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
         
-        .package-table tr:last-child td {
-            border-bottom: none;
+        .pricing-table tr:hover {
+            background-color: #ffe6e6;
         }
         
-        .package-table tr:hover {
-            background-color: #f8f9fa;
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to bottom, var(--primary), #cc0029);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
-        .note {
-            text-align: center;
-            margin-top: 30px;
+        .btn:hover {
+            background: linear-gradient(to bottom, #ff1a4d, #e6002e);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-large {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .testimonial p {
             font-style: italic;
-            color: #666;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+            color: var(--primary);
+        }
+        
+        .guarantee {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--secondary);
+            color: white;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .guarantee h3 {
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .package-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .package-card {
+            flex: 1 0 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .package-card h3 {
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 15px 0;
+        }
+        
+        .highlight {
+            background-color: #fff9e6;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .cta-box {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .cta-box h2 {
+            color: white;
         }
         
         @media (max-width: 768px) {
-            .packages-container {
+            .package-container {
                 flex-direction: column;
-                align-items: center;
             }
             
-            .package {
-                width: 100%;
+            h1 {
+                font-size: 2rem;
             }
             
-            .package-table th, .package-table td {
-                padding: 8px 5px;
+            .headline {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Aumente suas Redes Sociais AGORA!</h1>
+            <p>Seguidores Reais e Curtidas Instantâneas - Resultados Garantidos!</p>
+        </div>
+    </header>
+    
     <div class="container">
-        <header>
-            <h1>Turbo Lux</h1>
-            <p class="subtitle">Aumente sua presença nas redes sociais</p>
-        </header>
-        
-        <div class="packages-container">
-            <div class="package quality-normal">
-                <div class="package-header">
-                    <h2 class="package-title">📦 QUALIDADE NORMAL</h2>
-                    <p class="package-price">R$ 0,03 por seguidor</p>
-                </div>
-                
-                <table class="package-table">
-                    <tr>
-                        <th>Seguidores</th>
-                        <th>Preço (R$)</th>
-                    </tr>
-                    <tr><td>100</td><td>3,00</td></tr>
-                    <tr><td>200</td><td>6,00</td></tr>
-                    <tr><td>300</td><td>9,00</td></tr>
-                    <tr><td>400</td><td>12,00</td></tr>
-                    <tr><td>500</td><td>15,00</td></tr>
-                    <tr><td>600</td><td>18,00</td></tr>
-                    <tr><td>700</td><td>21,00</td></tr>
-                    <tr><td>800</td><td>24,00</td></tr>
-                    <tr><td>900</td><td>27,00</td></tr>
-                    <tr><td>1000</td><td>30,00</td></tr>
-                    <tr><td>1500</td><td>45,00</td></tr>
-                    <tr><td>2000</td><td>60,00</td></tr>
-                    <tr><td>2500</td><td>75,00</td></tr>
-                    <tr><td>3000</td><td>90,00</td></tr>
-                    <tr><td>3500</td><td>105,00</td></tr>
-                    <tr><td>4000</td><td>120,00</td></tr>
-                    <tr><td>4500</td><td>135,00</td></tr>
-                    <tr><td>5000</td><td>150,00</td></tr>
-                    <tr><td>5500</td><td>165,00</td></tr>
-                    <tr><td>6000</td><td>180,00</td></tr>
-                    <tr><td>6500</td><td>195,00</td></tr>
-                    <tr><td>7000</td><td>210,00</td></tr>
-                    <tr><td>7500</td><td>225,00</td></tr>
-                    <tr><td>8000</td><td>240,00</td></tr>
-                    <tr><td>8500</td><td>255,00</td></tr>
-                    <tr><td>9000</td><td>270,00</td></tr>
-                    <tr><td>9500</td><td>285,00</td></tr>
-                    <tr><td>10000</td><td>300,00</td></tr>
-                </table>
-            </div>
-            
-            <div class="package quality-premium">
-                <div class="package-header">
-                    <h2 class="package-title">💎 QUALIDADE PREMIUM</h2>
-                    <p class="package-price">R$ 0,08 por seguidor</p>
-                </div>
-                
-                <table class="package-table">
-                    <tr>
-                        <th>Seguidores</th>
-                        <th>Preço (R$)</th>
-                    </tr>
-                    <tr><td>100</td><td>8,00</td></tr>
-                    <tr><td>200</td><td>16,00</td></tr>
-                    <tr><td>300</td><td>24,00</td></tr>
-                    <tr><td>400</td><td>32,00</td></tr>
-                    <tr><td>500</td><td>40,00</td></tr>
-                    <tr><td>600</td><td>48,00</td></tr>
-                    <tr><td>700</td><td>56,00</td></tr>
-                    <tr><td>800</td><td>64,00</td></tr>
-                    <tr><td>900</td><td>72,00</td></tr>
-                    <tr><td>1000</td><td>80,00</td></tr>
-                    <tr><td>1500</td><td>120,00</td></tr>
-                    <tr><td>2000</td><td>160,00</td></tr>
-                    <tr><td>2500</td><td>200,00</td></tr>
-                    <tr><td>3000</td><td>240,00</td></tr>
-                    <tr><td>3500</td><td>280,00</td></tr>
-                    <tr><td>4000</td><td>320,00</td></tr>
-                    <tr><td>4500</td><td>360,00</td></tr>
-                    <tr><td>5000</td><td>400,00</td></tr>
-                    <tr><td>5500</td><td>440,00</td></tr>
-                    <tr><td>6000</td><td>480,00</td></tr>
-                    <tr><td>6500</td><td>520,00</td></tr>
-                    <tr><td>7000</td><td>560,00</td></tr>
-                    <tr><td>7500</td><td>600,00</td></tr>
-                    <tr><td>8000</td><td>640,00</td></tr>
-                    <tr><td>8500</td><td>680,00</td></tr>
-                    <tr><td>9000</td><td>720,00</td></tr>
-                    <tr><td>9500</td><td>760,00</td></tr>
-                    <tr><td>10000</td><td>800,00</td></tr>
-                </table>
-            </div>
+        <div class="headline">
+            ⚡ TRANSFORME SUAS REDES SOCIAIS EM APENAS 24 HORAS!
         </div>
         
-        <p class="note">Entre em contato conosco para pedidos personalizados ou maiores quantidades.</p>
+        <div class="subheadline">
+            Obtenha autoridade, visibilidade e engajamento com nossos pacotes turbo!
+        </div>
+        
+        <div class="urgency">
+            🚀 OFERTA ESPECIAL POR TEMPO LIMITADO - PREÇOS IMBATÍVEIS!
+        </div>
+        
+        <div class="section">
+            <h2>PACOTES DE SEGUIDORES</h2>
+            <p>Escolha entre a qualidade Normal ou Premium para impulsionar seu perfil!</p>
+            
+            <h3>Qualidade Normal</h3>
+            <table class="pricing-table">
+                <tr>
+                    <th>Seguidores</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>R$ 3,00</td>
+                    <td><button class="btn" onclick="selectPackage('100 seguidores - Normal', 3.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>R$ 6,00</td>
+                    <td><button class="btn" onclick="selectPackage('200 seguidores - Normal', 6.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td>R$ 9,00</td>
+                    <td><button class="btn" onclick="selectPackage('300 seguidores - Normal', 9.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>R$ 12,00</td>
+                    <td><button class="btn" onclick="selectPackage('400 seguidores - Normal', 12.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>R$ 15,00</td>
+                    <td><button class="btn" onclick="selectPackage('500 seguidores - Normal', 15.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>R$ 30,00</td>
+                    <td><button class="btn" onclick="selectPackage('1000 seguidores - Normal', 30.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>5000</td>
+                    <td>R$ 150,00</td>
+                    <td><button class="btn" onclick="selectPackage('5000 seguidores - Normal', 150.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>R$ 300,00</td>
+                    <td><button class="btn" onclick="selectPackage('10000 seguidores - Normal', 300.00)">COMPRAR AGORA</button></td>
+                </tr>
+            </table>
+            
+            <h3>Qualidade Premium <span class="highlight">3x MAIS QUALIDADE</span></h3>
+            <table class="pricing-table">
+                <tr>
+                    <th>Seguidores</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>R$ 8,00</td>
+                    <td><button class="btn" onclick="selectPackage('100 seguidores - Premium', 8.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>R$ 16,00</td>
+                    <td><button class="btn" onclick="selectPackage('200 seguidores - Premium', 16.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td>R$ 24,00</td>
+                    <td><button class="btn" onclick="selectPackage('300 seguidores - Premium', 24.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>R$ 32,00</td>
+                    <td><button class="btn" onclick="selectPackage('400 seguidores - Premium', 32.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>R$ 40,00</td>
+                    <td><button class="btn" onclick="selectPackage('500 seguidores - Premium', 40.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>R$ 80,00</td>
+                    <td><button class="btn" onclick="selectPackage('1000 seguidores - Premium', 80.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>5000</td>
+                    <td>R$ 400,00</td>
+                    <td><button class="btn" onclick="selectPackage('5000 seguidores - Premium', 400.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>R$ 800,00</td>
+                    <td><button class="btn" onclick="selectPackage('10000 seguidores - Premium', 800.00)">COMPRAR AGORA</button></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>PACOTES DE CURTIDAS</h2>
+            <p>Aumente seu engajamento com curtidas de alta qualidade!</p>
+            
+            <h3>Qualidade Normal</h3>
+            <table class="pricing-table">
+                <tr>
+                    <th>Curtidas</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>R$ 0,80</td>
+                    <td><button class="btn" onclick="selectPackage('100 curtidas - Normal', 0.80)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>R$ 4,00</td>
+                    <td><button class="btn" onclick="selectPackage('500 curtidas - Normal', 4.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>R$ 8,00</td>
+                    <td><button class="btn" onclick="selectPackage('1000 curtidas - Normal', 8.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>5000</td>
+                    <td>R$ 40,00</td>
+                    <td><button class="btn" onclick="selectPackage('5000 curtidas - Normal', 40.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>R$ 80,00</td>
+                    <td><button class="btn" onclick="selectPackage('10000 curtidas - Normal', 80.00)">COMPRAR AGORA</button></td>
+                </tr>
+            </table>
+            
+            <h3>Qualidade Premium <span class="highlight">3x MAIS QUALIDADE</span></h3>
+            <table class="pricing-table">
+                <tr>
+                    <th>Curtidas</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>R$ 2,40</td>
+                    <td><button class="btn" onclick="selectPackage('100 curtidas - Premium', 2.40)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>R$ 12,00</td>
+                    <td><button class="btn" onclick="selectPackage('500 curtidas - Premium', 12.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>R$ 24,00</td>
+                    <td><button class="btn" onclick="selectPackage('1000 curtidas - Premium', 24.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>5000</td>
+                    <td>R$ 120,00</td>
+                    <td><button class="btn" onclick="selectPackage('5000 curtidas - Premium', 120.00)">COMPRAR AGORA</button></td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>R$ 240,00</td>
+                    <td><button class="btn" onclick="selectPackage('10000 curtidas - Premium', 240.00)">COMPRAR AGORA</button></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="cta-box">
+            <h2>NÃO PERCA TEMPO!</h2>
+            <p>Escolha seu pacote agora e impulsione suas redes sociais em até 24 horas!</p>
+            <p>Use o PIX para pagamento rápido e seguro!</p>
+            <button class="btn btn-large" onclick="scrollToPayment()">QUERO IMPULSIONAR MINHAS REDES!</button>
+        </div>
+        
+        <div class="section">
+            <h2>COMO FUNCIONA?</h2>
+            <ol>
+                <li>Escolha o pacote desejado</li>
+                <li>Clique em "COMPRAR AGORA"</li>
+                <li>Realize o pagamento via PIX</li>
+                <li>Enviamos os seguidores/curtidas em até 24 horas</li>
+                <li>Aproveite seu perfil turbinado!</li>
+            </ol>
+        </div>
+        
+        <div class="testimonial">
+            <p>"Comprei 1000 seguidores e em menos de 12 horas já estava tudo na minha conta! Agora meu perfil chama muito mais atenção!"</p>
+            <div class="author">- Maria Silva, Influencer</div>
+        </div>
+        
+        <div class="testimonial">
+            <p>"As curtidas premium são incríveis! Perfis reais e muito engajamento. Valeu cada centavo!"</p>
+            <div class="author">- João Santos, Empreendedor</div>
+        </div>
+        
+        <div class="guarantee">
+            <h3>GARANTIA DE 7 DIAS</h3>
+            <p>Se não ficar satisfeito com o resultado, devolvemos seu dinheiro!</p>
+        </div>
+        
+        <div id="payment" class="section">
+            <h2>PAGAMENTO VIA PIX</h2>
+            <p>Após selecionar seu pacote, utilize a chave PIX abaixo para pagamento:</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0;">
+                <p style="font-weight: bold; font-size: 1.2rem;" id="selected-package">Nenhum pacote selecionado</p>
+                <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary);" id="package-price">R$ 0,00</p>
+                
+                <div style="margin: 20px 0;">
+                    <p>Chave PIX:</p>
+                    <p style="font-weight: bold; word-break: break-all;">00020126470014br.gov.bcb.pix0111183032517590210Turbo lux 5204000053039865802BR5920DANIEL DE JESUS LIMA6005VIANA62580520SAN2025090518413965250300017br.gov.bcb.brcode01051.0.063040BCB</p>
+                </div>
+                
+                <p>Após o pagamento, envie o comprovante para: <strong>turbolux@contato.com</strong></p>
+                <p>Seu pedido será processado em até 24 horas após confirmação do pagamento.</p>
+            </div>
+        </div>
     </div>
+    
+    <footer>
+        <div class="container">
+            <p>Turbo Seguidores &copy; 2023 - Todos os direitos reservados</p>
+            <p>Contato: turbolux@contato.com</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectPackage(packageName, price) {
+            document.getElementById('selected-package').textContent = packageName;
+            document.getElementById('package-price').textContent = 'R$ ' + price.toFixed(2).replace('.', ',');
+            
+            alert('Pacote selecionado: ' + packageName + '\nValor: R$ ' + price.toFixed(2).replace('.', ',') + '\n\nUtilize a chave PIX abaixo para pagamento!');
+            
+            scrollToPayment();
+        }
+        
+        function scrollToPayment() {
+            document.getElementById('payment').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
