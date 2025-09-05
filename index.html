@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialBoost - Seguidores Premium</title>
+    <style>
+        :root {
+            --primary: #ff3c00;
+            --secondary: #2c2c2c;
+            --accent: #00c853;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            background-color: #e03500;
+            transform: scale(1.05);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--secondary);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-body {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .buy-button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .buy-button:hover {
+            background-color: #00b34d;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--secondary);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background-color: #f1f1f1;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--secondary);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .payment-info {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .pix {
+            font-size: 24px;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">SocialBoost</div>
+            <nav>
+                <a href="#produtos" style="color: white; text-decoration: none;">Produtos</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>IMPULSIONE SUAS REDES SOCIAIS AGORA!</h1>
+            <p>Seguidores de alta qualidade e curtidas reais para fazer seu perfil decolar. Resultados rápidos e garantidos!</p>
+            <a href="#produtos" class="cta-button">COMPRAR AGORA</a>
+        </div>
+    </section>
+    
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">NOSSOS PACOTES</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>SEGUIDORES STANDARD</h3>
+                    </div>
+                    <div class="product-body">
+                        <p>1000 seguidores para aumentar sua presença digital</p>
+                        <div class="price">R$ 30,00</div>
+                        <button class="buy-button" onclick="comprar('Seguidores Standard', 30)">COMPRAR AGORA</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>SEGUIDORES PREMIUM</h3>
+                    </div>
+                    <div class="product-body">
+                        <p>1000 seguidores premium - maior qualidade e engajamento</p>
+                        <div class="price">R$ 60,00</div>
+                        <button class="buy-button" onclick="comprar('Seguidores Premium', 60)">COMPRAR AGORA</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>CURTIDAS</h3>
+                    </div>
+                    <div class="product-body">
+                        <p>1000 curtidas para aumentar seu engajamento</p>
+                        <div class="price">R$ 8,00</div>
+                        <button class="buy-button" onclick="comprar('Curtidas', 8)">COMPRAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">POR QUE ESCOLHER A SOCIALBOOST?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Começamos a entrega em até 24 horas após a confirmação do pagamento.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Perfis reais e de alta qualidade para um crescimento orgânico.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Segurança Total</h3>
+                    <p>Processo seguro que não requer sua senha nem acesso à sua conta.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe de suporte disponível para ajudar você a qualquer momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O QUE NOSSOS CLIENTES DIZEM</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Comprei 10k seguidores e em menos de 48 horas minha conta estava bombando! O engajamento aumentou muito."</p>
+                    <p><strong>Carlos Silva</strong></p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Atendimento excelente e os seguidores são de muita qualidade. Recomendo muito a SocialBoost!"</p>
+                    <p><strong>Amanda Santos</strong></p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Já testei vários serviços, mas esse foi o melhor custo-benefício. Entrega rápida e seguidores reais."</p>
+                    <p><strong>Ricardo Oliveira</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como funciona o processo de compra?</div>
+                <div class="faq-answer">
+                    <p>1. Escolha o pacote desejado<br>
+                    2. Clique em "COMPRAR AGORA"<br>
+                    3. Envie o comprovante para nosso WhatsApp<br>
+                    4. Pronto! Em até 24h iniciaremos a entrega</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo leva para a entrega?</div>
+                <div class="faq-answer">
+                    <p>Iniciamos a entrega em até 24 horas após a confirmação do pagamento. A entrega completa pode levar de 2 a 7 dias dependendo do tamanho do pacote.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Os seguidores são reais?</div>
+                <div class="faq-answer">
+                    <p>Sim! Trabalhamos apenas com perfis reais e de qualidade. Nada de bots ou perfis falsos que podem prejudicar sua conta.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">É seguro para minha conta?</div>
+                <div class="faq-answer">
+                    <p>Totalmente seguro! Não pedimos sua senha em nenhum momento do processo. Nosso método é não intrusivo e não viola os termos das redes sociais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <h3>SocialBoost - Impulsionando Suas Redes Sociais</h3>
+            <div class="payment-info">
+                <p>Pague via PIX e receba em até 24h!</p>
+                <div class="pix">Chave PIX: 18303251759</div>
+                <p>Após o pagamento, envie o comprovante para nosso WhatsApp para acelerar o processo.</p>
+            </div>
+            <p>© 2023 SocialBoost - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Função de compra
+        function comprar(produto, preco) {
+            const message = `Olá! Gostaria de comprar o pacote: ${produto} no valor de R$ ${preco},00.`;
+            const whatsappURL = `https://wa.me/5518303251759?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
