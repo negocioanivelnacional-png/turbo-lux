@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turbo Lux - Seguidores Premium com Entrega Imediata</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --primary-color: #000000;
@@ -15,13 +16,15 @@
             --gray-color: #1a1a1a;
             --dark-red: #cc0000;
             --gold: #FFD700;
+            --silver: #C0C0C0;
+            --bronze: #CD7F32;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Montserrat', 'Roboto', sans-serif;
         }
         
         body {
@@ -236,6 +239,45 @@
             opacity: 0.3;
         }
         
+        .package-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            background: var(--primary-color);
+            color: var(--text-color);
+            border: 2px solid var(--secondary-color);
+            padding: 12px 25px;
+            margin: 0 10px 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            background: var(--secondary-color);
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
         .package-container {
             display: flex;
             flex-wrap: wrap;
@@ -351,6 +393,44 @@
             right: -35px;
             background: var(--gold);
             color: black;
+            padding: 5px 40px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        .premium {
+            border: 2px solid var(--gold);
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+        }
+        
+        .premium::before {
+            content: "PREMIUM";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--gold);
+            color: black;
+            padding: 5px 40px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        .combo {
+            border: 2px solid var(--accent-color);
+            background: linear-gradient(145deg, #1a1a1a, #2a1a1a);
+        }
+        
+        .combo::before {
+            content: "COMBO";
+            position: absolute;
+            top: 15px;
+            right: -25px;
+            background: var(--accent-color);
+            color: white;
             padding: 5px 40px;
             font-size: 0.9rem;
             font-weight: bold;
@@ -642,6 +722,14 @@
             background: var(--accent-color);
         }
         
+        .qrcode-container {
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--gray-color);
@@ -768,37 +856,6 @@
             background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .package {
-                width: 100%;
-                max-width: 320px;
-            }
-            
-            section h2 {
-                font-size: 2.2rem;
-            }
-            
-            .payment-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .security-items {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .testimonial-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        
         /* Efeito de partículas */
         .particles {
             position: fixed;
@@ -836,6 +893,41 @@
                 opacity: 0;
             }
         }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .package {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .payment-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .security-items {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .testimonial-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -860,106 +952,221 @@
     <section id="packages" class="packages">
         <div class="container">
             <h2>ESCOLHA SEU PACOTE DE SEGUIDORES</h2>
-            <div class="package-container">
-                <!-- Pacotes conforme a tabela fornecida -->
-                <div class="package">
-                    <h3>100 seguidores ✨</h3>
-                    <div class="price">R$ 4,00</div>
-                    <div class="description">Perfil básico - aumento rápido e eficaz</div>
-                    <button class="buy-button" data-package="100 seguidores" data-price="4.00">Comprar Agora</button>
+            
+            <div class="package-tabs">
+                <button class="tab-button active" data-tab="followers">Seguidores</button>
+                <button class="tab-button" data-tab="premium">Premium</button>
+                <button class="tab-button" data-tab="likes">Curtidas</button>
+                <button class="tab-button" data-tab="combos">Combos</button>
+            </div>
+            
+            <div class="tab-content active" id="followers-tab">
+                <div class="package-container">
+                    <div class="package">
+                        <h3>100 seguidores ✨</h3>
+                        <div class="price">R$ 4,00</div>
+                        <div class="description">Perfil básico - aumento rápido e eficaz</div>
+                        <button class="buy-button" data-package="100 seguidores" data-price="4.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>200 seguidores 🚀</h3>
+                        <div class="price">R$ 8,00</div>
+                        <div class="description">Aumento visível - ideal para começar</div>
+                        <button class="buy-button" data-package="200 seguidores" data-price="8.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>300 seguidores 🌟</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Crescimento consistente - melhor custo-benefício</div>
+                        <button class="buy-button" data-package="300 seguidores" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package popular">
+                        <h3>1.000 seguidores 💎</h3>
+                        <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
+                        <div class="description">Perfil relevante - alcance ampliado</div>
+                        <button class="buy-button" data-package="1000 seguidores" data-price="24.90">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>2.000 seguidores ⚡</h3>
+                        <div class="price">R$ 59,80</div>
+                        <div class="bonus">+300 curtidas de bônus</div>
+                        <div class="description">Presença fortalecida - impacto imediato</div>
+                        <button class="buy-button" data-package="2000 seguidores" data-price="59.80">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>3.000 seguidores 🔥</h3>
+                        <div class="price">R$ 89,70</div>
+                        <div class="bonus">+500 curtidas de bônus</div>
+                        <div class="description">Crescimento acelerado - maior visibilidade</div>
+                        <button class="buy-button" data-package="3000 seguidores" data-price="89.70">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>4.000 seguidores 🌈</h3>
+                        <div class="price">R$ 119,60</div>
+                        <div class="bonus">+700 curtidas de bônus</div>
+                        <div class="description">Alcance expandido - mais oportunidades</div>
+                        <button class="buy-button" data-package="4000 seguidores" data-price="119.60">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>5.000 seguidores 🏆</h3>
+                        <div class="price">R$ 149,50</div>
+                        <div class="bonus">+1.000 curtidas de bônus</div>
+                        <div class="description">Influência em crescimento - perfil destacado</div>
+                        <button class="buy-button" data-package="5000 seguidores" data-price="149.50">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>10.000 seguidores 🏅</h3>
+                        <div class="price">R$ 299,00</div>
+                        <div class="bonus">+2.000 curtidas de bônus</div>
+                        <div class="description">Status de autoridade - transforme seu perfil</div>
+                        <button class="buy-button" data-package="10000 seguidores" data-price="299.00">Comprar Agora</button>
+                    </div>
                 </div>
-                
-                <div class="package">
-                    <h3>200 seguidores 🚀</h3>
-                    <div class="price">R$ 8,00</div>
-                    <div class="description">Aumento visível - ideal para começar</div>
-                    <button class="buy-button" data-package="200 seguidores" data-price="8.00">Comprar Agora</button>
+            </div>
+            
+            <div class="tab-content" id="premium-tab">
+                <div class="package-container">
+                    <div class="package premium">
+                        <h3>100 seguidores Premium ✨</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Seguidores de alta qualidade com maior taxa de engajamento</div>
+                        <button class="buy-button" data-package="100 seguidores Premium" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>200 seguidores Premium 🚀</h3>
+                        <div class="price">R$ 24,00</div>
+                        <div class="description">Perfis verificados e com alta taxa de interação</div>
+                        <button class="buy-button" data-package="200 seguidores Premium" data-price="24.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>500 seguidores Premium 💎</h3>
+                        <div class="price">R$ 60,00</div>
+                        <div class="description">Aumento significativo com seguidores de alta qualidade</div>
+                        <button class="buy-button" data-package="500 seguidores Premium" data-price="60.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium popular">
+                        <h3>1.000 seguidores Premium ⚡</h3>
+                        <div class="price">R$ 120,00</div>
+                        <div class="description">Pacote premium mais popular - resultado garantido</div>
+                        <button class="buy-button" data-package="1000 seguidores Premium" data-price="120.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>2.000 seguidores Premium 🔥</h3>
+                        <div class="price">R$ 240,00</div>
+                        <div class="bonus">+500 curtidas premium</div>
+                        <div class="description">Crescimento acelerado com engajamento garantido</div>
+                        <button class="buy-button" data-package="2000 seguidores Premium" data-price="240.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>5.000 seguidores Premium 🏆</h3>
+                        <div class="price">R$ 600,00</div>
+                        <div class="bonus">+1.500 curtidas premium</div>
+                        <div class="description">Transforme seu perfil em uma autoridade</div>
+                        <button class="buy-button" data-package="5000 seguidores Premium" data-price="600.00">Comprar Agora</button>
+                    </div>
                 </div>
-                
-                <div class="package">
-                    <h3>300 seguidores 🌟</h3>
-                    <div class="price">R$ 12,00</div>
-                    <div class="description">Crescimento consistente - melhor custo-benefício</div>
-                    <button class="buy-button" data-package="300 seguidores" data-price="12.00">Comprar Agora</button>
+            </div>
+            
+            <div class="tab-content" id="likes-tab">
+                <div class="package-container">
+                    <div class="package">
+                        <h3>100 curtidas 👍</h3>
+                        <div class="price">R$ 2,00</div>
+                        <div class="description">Aumente o engajamento dos seus posts</div>
+                        <button class="buy-button" data-package="100 curtidas" data-price="2.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>500 curtidas 🔥</h3>
+                        <div class="price">R$ 8,00</div>
+                        <div class="description">Destaque seus conteúdos mais importantes</div>
+                        <button class="buy-button" data-package="500 curtidas" data-price="8.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package popular">
+                        <h3>1.000 curtidas ⚡</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Pacote ideal para aumentar a visibilidade</div>
+                        <button class="buy-button" data-package="1000 curtidas" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>2.000 curtidas 💎</h3>
+                        <div class="price">R$ 20,00</div>
+                        <div class="description">Maximize o alcance dos seus posts</div>
+                        <button class="buy-button" data-package="2000 curtidas" data-price="20.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>5.000 curtidas 🏆</h3>
+                        <div class="price">R$ 45,00</div>
+                        <div class="description">Engajamento massivo para seus conteúdos</div>
+                        <button class="buy-button" data-package="5000 curtidas" data-price="45.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>10.000 curtidas 🌟</h3>
+                        <div class="price">R$ 80,00</div>
+                        <div class="description">Transforme seus posts em virais</div>
+                        <button class="buy-button" data-package="10000 curtidas" data-price="80.00">Comprar Agora</button>
+                    </div>
                 </div>
-                
-                <div class="package popular">
-                    <h3>1.000 seguidores 💎</h3>
-                    <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
-                    <div class="description">Perfil relevante - alcance ampliado</div>
-                    <button class="buy-button" data-package="1000 seguidores" data-price="24.90">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>2.000 seguidores ⚡</h3>
-                    <div class="price">R$ 59,80</div>
-                    <div class="bonus">+300 curtidas de bônus</div>
-                    <div class="description">Presença fortalecida - impacto imediato</div>
-                    <button class="buy-button" data-package="2000 seguidores" data-price="59.80">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>3.000 seguidores 🔥</h3>
-                    <div class="price">R$ 89,70</div>
-                    <div class="bonus">+500 curtidas de bônus</div>
-                    <div class="description">Crescimento acelerado - maior visibilidade</div>
-                    <button class="buy-button" data-package="3000 seguidores" data-price="89.70">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>4.000 seguidores 🌈</h3>
-                    <div class="price">R$ 119,60</div>
-                    <div class="bonus">+700 curtidas de bônus</div>
-                    <div class="description">Alcance expandido - mais oportunidades</div>
-                    <button class="buy-button" data-package="4000 seguidores" data-price="119.60">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>5.000 seguidores 🏆</h3>
-                    <div class="price">R$ 149,50</div>
-                    <div class="bonus">+1.000 curtidas de bônus</div>
-                    <div class="description">Influência em crescimento - perfil destacado</div>
-                    <button class="buy-button" data-package="5000 seguidores" data-price="149.50">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>6.000 seguidores 👑</h3>
-                    <div class="price">R$ 179,40</div>
-                    <div class="bonus">+1.200 curtidas de bônus</div>
-                    <div class="description">Presença marcante - reconhecimento garantido</div>
-                    <button class="buy-button" data-package="6000 seguidores" data-price="179.40">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>7.000 seguidores 🌍</h3>
-                    <div class="price">R$ 209,30</div>
-                    <div class="bonus">+1.400 curtidas de bônus</div>
-                    <div class="description">Alcance global - autoridade estabelecida</div>
-                    <button class="buy-button" data-package="7000 seguidores" data-price="209.30">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>8.000 seguidores 💡</h3>
-                    <div class="price">R$ 239,20</div>
-                    <div class="bonus">+1.600 curtidas de bônus</div>
-                    <div class="description">Influência notável - presença destacada</div>
-                    <button class="buy-button" data-package="8000 seguidores" data-price="239.20">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>9.000 seguidores 💫</h3>
-                    <div class="price">R$ 269,10</div>
-                    <div class="bonus">+1.800 curtidas de bônus</div>
-                    <div class="description">Crescimento exponencial - resultados surpreendentes</div>
-                    <button class="buy-button" data-package="9000 seguidores" data-price="269.10">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>10.000 seguidores 🏅</h3>
-                    <div class="price">R$ 299,00</div>
-                    <div class="bonus">+2.000 curtidas de bônus</div>
-                    <div class="description">Status de autoridade - transforme seu perfil</div>
-                    <button class="buy-button" data-package="10000 seguidores" data-price="299.00">Comprar Agora</button>
+            </div>
+            
+            <div class="tab-content" id="combos-tab">
+                <div class="package-container">
+                    <div class="package combo">
+                        <h3>Combo Bronze 🥉</h3>
+                        <div class="price">R$ 30,00</div>
+                        <div class="description">500 seguidores + 500 curtidas</div>
+                        <div class="bonus">Economize R$ 10,00</div>
+                        <button class="buy-button" data-package="Combo Bronze" data-price="30.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo popular">
+                        <h3>Combo Prata 🥈</h3>
+                        <div class="price">R$ 50,00</div>
+                        <div class="description">1.000 seguidores + 1.000 curtidas</div>
+                        <div class="bonus">Economize R$ 20,00</div>
+                        <button class="buy-button" data-package="Combo Prata" data-price="50.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo">
+                        <h3>Combo Ouro 🥇</h3>
+                        <div class="price">R$ 120,00</div>
+                        <div class="description">3.000 seguidores + 2.000 curtidas</div>
+                        <div class="bonus">Economize R$ 40,00</div>
+                        <button class="buy-button" data-package="Combo Ouro" data-price="120.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo">
+                        <h3>Combo Platinum 💎</h3>
+                        <div class="price">R$ 200,00</div>
+                        <div class="description">5.000 seguidores + 5.000 curtidas</div>
+                        <div class="bonus">Economize R$ 80,00</div>
+                        <button class="buy-button" data-package="Combo Platinum" data-price="200.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo">
+                        <h3>Combo Diamante ✨</h3>
+                        <div class="price">R$ 350,00</div>
+                        <div class="description">10.000 seguidores + 10.000 curtidas</div>
+                        <div class="bonus">Economize R$ 150,00</div>
+                        <button class="buy-button" data-package="Combo Diamante" data-price="350.00">Comprar Agora</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1098,8 +1305,11 @@
             <div class="pix-info">
                 <h3>PAGAMENTO VIA PIX</h3>
                 <p>Para finalizar sua compra, realize o pagamento via PIX para a chave abaixo:</p>
-                <div class="pix-key" id="pixKey">18303251759</div>
+                <div class="pix-key" id="pixKey">00020126550014br.gov.bcb.pix0111183032517590218turbo lux services5204000053039865802BR5920DANIEL DE JESUS LIMA6005VIANA62580520SAN2025091121182110650300017br.gov.bcb.brcode01051.0.06304E8F7</div>
                 <button class="copy-btn" onclick="copyPixKey()">Copiar Chave PIX</button>
+                
+                <div class="qrcode-container" id="qrcode"></div>
+                
                 <p>Após o pagamento, envie o comprovante para nosso WhatsApp: <strong>(11) 99999-9999</strong> com seu @ do Instagram.</p>
             </div>
         </div>
@@ -1128,11 +1338,6 @@
             <div class="form-group">
                 <label for="instagram">Seu @ do Instagram</label>
                 <input type="text" id="instagram" placeholder="@seuusuario">
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Seu e-mail</label>
-                <input type="email" id="email" placeholder="seu@email.com">
             </div>
             
             <p>Após clicar em "Confirmar Compra", você receberá as instruções de pagamento via PIX.</p>
@@ -1184,6 +1389,22 @@
             });
         });
         
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and tabs
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding tab
+                const tabId = button.getAttribute('data-tab') + '-tab';
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
         // Modal functionality
         const modal = document.getElementById('purchaseModal');
         const closeModal = document.getElementById('closeModal');
@@ -1225,13 +1446,31 @@
             alert('Chave PIX copiada para a área de transferência!');
         }
         
+        // Generate QR Code
+        function generateQRCode() {
+            const pixPayload = "00020126550014br.gov.bcb.pix0111183032517590218turbo lux services5204000053039865802BR5920DANIEL DE JESUS LIMA6005VIANA62580520SAN2025091121182110650300017br.gov.bcb.brcode01051.0.06304E8F7";
+            const qrcodeContainer = document.getElementById('qrcode');
+            
+            // Clear previous QR code
+            qrcodeContainer.innerHTML = '';
+            
+            // Generate new QR code
+            new QRCode(qrcodeContainer, {
+                text: pixPayload,
+                width: 150,
+                height: 150,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+        
         // Confirm purchase
         function confirmPurchase() {
             const instagram = document.getElementById('instagram').value;
-            const email = document.getElementById('email').value;
             
-            if (!instagram || !email) {
-                alert('Por favor, preencha todos os campos.');
+            if (!instagram) {
+                alert('Por favor, informe seu @ do Instagram.');
                 return;
             }
             
@@ -1240,12 +1479,12 @@
             
             // Reset form
             document.getElementById('instagram').value = '';
-            document.getElementById('email').value = '';
         }
         
         // Initialize particles and animations
         window.addEventListener('load', () => {
             createParticles();
+            generateQRCode();
             
             // Animate elements on scroll
             const animatedElements = document.querySelectorAll('.security-item, .testimonial, .payment-step, .faq-item');
