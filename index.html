@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURBO SEGUIDORES - Aumente suas Redes Sociais AGORA!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Turbo Lux - Aumente seus Seguidores com Qualidade</title>
     <style>
         :root {
-            --primary: #ff003c;
-            --secondary: #00ccff;
-            --accent: #ffcc00;
-            --dark: #000000;
-            --darker: #111111;
-            --light: #f8f9fa;
-            --gray: #222222;
+            --primary-color: #000000;
+            --secondary-color: #ff0000;
+            --accent-color: #ff3333;
+            --text-color: #ffffff;
+            --gray-color: #1a1a1a;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--dark);
-            color: var(--light);
+            background-color: var(--primary-color);
+            color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
@@ -37,791 +33,452 @@
             padding: 20px;
         }
         
+        /* Header */
         header {
-            background: linear-gradient(to right, var(--darker), var(--gray));
-            color: white;
-            padding: 25px 0;
-            text-align: center;
-            border-bottom: 5px solid var(--primary);
-            position: relative;
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--secondary-color);
         }
         
-        .header-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--accent);
-            color: black;
-            padding: 10px 15px;
-            border-radius: 5px;
+        .logo {
+            font-size: 2.5rem;
             font-weight: bold;
-            transform: rotate(5deg);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin: 25px 0;
-            text-transform: uppercase;
+            color: var(--secondary-color);
             text-align: center;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 15px 0;
-        }
-        
-        .headline {
-            font-size: 2.2rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 40px 0;
-            color: var(--accent);
             text-transform: uppercase;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
         }
         
-        .subheadline {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--secondary);
-        }
-        
-        .urgency {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            padding: 20px;
-            text-align: center;
-            font-weight: bold;
-            margin: 30px 0;
-            border: 2px dashed var(--accent);
-            border-radius: 10px;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(255,0,60,0.3);
-        }
-        
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            box-shadow: 0 0 30px rgba(255,255,255,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .pricing-table th {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            padding: 20px;
+        .tagline {
             text-align: center;
             font-size: 1.2rem;
+            margin-top: 10px;
+            color: #ccc;
         }
         
-        .pricing-table td {
-            padding: 18px 15px;
+        /* Hero Section */
+        .hero {
             text-align: center;
-            border-bottom: 1px solid #333;
-            background-color: var(--darker);
+            padding: 60px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><path d="M0 0L100 100" stroke="%23ff0000" stroke-width="2"/><path d="M100 0L0 100" stroke="%23ff0000" stroke-width="2"/></svg>');
+            background-size: cover;
         }
         
-        .pricing-table tr:nth-child(even) td {
-            background-color: var(--gray);
-        }
-        
-        .pricing-table tr:hover td {
-            background-color: #2a2a2a;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(to bottom, var(--primary), #cc0029);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255,0,60,0.4);
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            background: linear-gradient(to bottom, #ff1a4d, #e6002e);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255,0,60,0.6);
-        }
-        
-        .btn-large {
-            font-size: 1.3rem;
-            padding: 20px 40px;
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(to bottom, var(--secondary), #0088cc);
-        }
-        
-        .btn-secondary:hover {
-            background: linear-gradient(to bottom, #00ddff, #0099cc);
-        }
-        
-        .testimonial {
-            background-color: var(--gray);
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border-left: 5px solid var(--secondary);
-            position: relative;
-        }
-        
-        .testimonial:before {
-            content: """;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-            font-family: Arial;
-        }
-        
-        .testimonial p {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .testimonial .author {
-            font-weight: bold;
-            text-align: right;
-            margin-top: 20px;
-            color: var(--secondary);
-            font-size: 1.1rem;
-        }
-        
-        .guarantee {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: white;
-            margin: 40px 0;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,204,255,0.3);
-        }
-        
-        .guarantee h3 {
-            color: white;
-            font-size: 2rem;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
         }
         
-        .guarantee p {
+        .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
         }
         
-        footer {
-            background-color: var(--darker);
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
             color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-            border-top: 1px solid #333;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
         }
         
-        .section {
-            margin: 50px 0;
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+        }
+        
+        /* Packages Section */
+        .packages {
+            background-color: var(--gray-color);
         }
         
         .package-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
+        }
+        
+        .package {
+            background-color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--secondary-color);
+        }
+        
+        .package h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .package .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .package .description {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .package .buy-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .package .buy-button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .premium {
+            border: 2px solid gold;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium::before {
+            content: "PREMIUM";
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: gold;
+            color: black;
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+        
+        /* Security Section */
+        .security {
+            text-align: center;
+        }
+        
+        .security-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
         }
         
-        .package-card {
-            flex: 1 0 300px;
-            background: linear-gradient(to bottom, var(--darker), var(--gray));
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            text-align: center;
-            border-top: 5px solid var(--primary);
-            max-width: 350px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+        .security-item {
+            width: 250px;
+            padding: 20px;
         }
         
-        .package-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .package-card.popular {
-            border-top: 5px solid var(--accent);
-            transform: scale(1.05);
-        }
-        
-        .package-card.popular:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: 15px;
-            right: -35px;
-            background: var(--accent);
-            color: black;
-            padding: 8px 40px;
-            font-weight: bold;
-            transform: rotate(45deg);
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .package-card h3 {
-            color: var(--primary);
-            font-size: 1.6rem;
+        .security-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
             margin-bottom: 15px;
         }
         
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--secondary);
-            margin: 20px 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .price .small {
+        .security-item h3 {
             font-size: 1.5rem;
-            color: var(--light);
+            margin-bottom: 15px;
+            color: var(--secondary-color);
         }
         
-        .features {
-            list-style: none;
-            margin: 20px 0;
-            text-align: left;
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--gray-color);
         }
         
-        .features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .features li:before {
-            content: "✓";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .highlight {
-            background-color: rgba(255, 204, 0, 0.2);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: var(--accent);
-            display: inline-block;
-            margin: 10px 0;
-        }
-        
-        .cta-box {
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 15px;
-            margin: 50px 0;
-            box-shadow: 0 10px 30px rgba(255,0,60,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-box:before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 3s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-            100% { transform: scale(0.8); opacity: 0.5; }
-        }
-        
-        .cta-box h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta-box p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .pix-box {
-            background: var(--darker);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            border: 2px solid var(--secondary);
-        }
-        
-        .pix-code {
-            background: white;
-            color: black;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            word-break: break-all;
-            margin: 15px 0;
-            font-size: 0.9rem;
-            text-align: center;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .pix-code .copy-btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-        
-        .pix-instructions {
-            font-size: 0.9rem;
-            margin-top: 15px;
-            color: #ccc;
-        }
-        
-        .whatsapp-floating {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .testimonial-container {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            animation: pulse 2s infinite;
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .client {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            padding-left: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--gray-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
             text-decoration: none;
         }
         
-        .bonus-box {
-            background: linear-gradient(45deg, #ff00cc, #3333ff);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255,0,204,0.3);
+        .footer-links a:hover {
+            color: var(--secondary-color);
         }
         
-        .bonus-box h3 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 20px;
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
         }
         
+        /* Responsive */
         @media (max-width: 768px) {
-            .package-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .package-card {
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            .package-card.popular {
-                transform: scale(1);
-            }
-            
-            .package-card.popular:hover {
-                transform: translateY(-10px);
-            }
-            
-            h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
             
-            .headline {
-                font-size: 1.5rem;
-            }
-            
-            .cta-box {
-                padding: 30px 15px;
+            .package {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
 </head>
 <body>
-    <a href="https://wa.me/5511999999999?text=Quero%20comprar%20seguidores!" class="whatsapp-floating">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
     <header>
         <div class="container">
-            <div class="header-badge">OFERTA ÚNICA!</div>
-            <h1>Transforme suas Redes Sociais AGORA!</h1>
-            <p>Seguidores Reais e Curtidas Instantâneas - Resultados em 24h!</p>
+            <div class="logo">TURBO LUX</div>
+            <div class="tagline">Aumente sua presença nas redes sociais instantaneamente</div>
         </div>
     </header>
     
-    <div class="container">
-        <div class="headline">
-            ⚡ SUA REDE SOCIAL VAI EXPLODIR DE SEGUIDORES!
-        </div>
-        
-        <div class="subheadline">
-            Obtenha autoridade, visibilidade e engajamento com nossos pacotes turbo!
-        </div>
-        
-        <div class="urgency">
-            🚀 ÚLTIMAS VAGAS COM PREÇO ESPECIAL - GARANTA JÁ!
-        </div>
-        
-        <div class="bonus-box">
-            <h3><i class="fas fa-gift"></i> BÔNUS EXCLUSIVO!</h3>
-            <p>Hoje você leva <strong>100 curtidas</strong> em qualquer publicação além do pacote escolhido!</p>
-            <p class="highlight">Somente para as primeiras 10 compras de hoje!</p>
-        </div>
-        
-        <div class="section">
-            <h2><i class="fas fa-users"></i> PACOTES DE SEGUIDORES</h2>
-            <p class="subheadline">Escolha entre a qualidade Normal ou Premium para impulsionar seu perfil!</p>
-            
-            <div class="package-container">
-                <div class="package-card">
-                    <h3>100 Seguidores</h3>
-                    <div class="price">R$ <span class="price-value">3,00</span></div>
-                    <ul class="features">
-                        <li>Entrega em até 24h</li>
-                        <li>Perfis de qualidade</li>
-                        <li>Suporte 24/7</li>
-                        <li>Garantia de reposição</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('100 seguidores - Normal', 3.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-3">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-42665544000052040000530398654053.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304E3A0
-                            <button class="copy-btn" onclick="copyPix('pix-3')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-                
-                <div class="package-card popular">
-                    <div class="popular-badge">POPULAR</div>
-                    <h3>500 Seguidores</h3>
-                    <div class="price">R$ <span class="price-value">15,00</span></div>
-                    <ul class="features">
-                        <li>Entrega em até 24h</li>
-                        <li>Perfis de alta qualidade</li>
-                        <li>Suporte prioritário</li>
-                        <li>Garantia de 30 dias</li>
-                        <li>+100 curtidas de bônus</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('500 seguidores - Normal', 15.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-15">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540615.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304A1B2
-                            <button class="copy-btn" onclick="copyPix('pix-15')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-                
-                <div class="package-card">
-                    <h3>1000 Seguidores</h3>
-                    <div class="price">R$ <span class="price-value">30,00</span></div>
-                    <ul class="features">
-                        <li>Entrega expressa 12h</li>
-                        <li>Perfis premium</li>
-                        <li>Suporte VIP 24/7</li>
-                        <li>Garantia de 60 dias</li>
-                        <li>+200 curtidas de bônus</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('1000 seguidores - Normal', 30.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-30">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540630.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304C3D4
-                            <button class="copy-btn" onclick="copyPix('pix-30')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="urgency">
-            ⚡ QUALIDADE PREMIUM - SEGUIDORES 3X MAIS ENGAJADOS!
-        </div>
-        
-        <div class="package-container">
-            <div class="package-card">
-                <h3>100 Seguidores Premium</h3>
-                <div class="price">R$ <span class="price-value">8,00</span></div>
-                <ul class="features">
-                    <li>Entrega em até 12h</li>
-                    <li>Perfis verificados</li>
-                    <li>Alta taxa de engajamento</li>
-                    <li>Suporte 24/7</li>
-                    <li>Garantia vitalícia</li>
-                </ul>
-                <button class="btn" onclick="selectPackage('100 seguidores - Premium', 8.00)">COMPRAR AGORA</button>
-                <div class="pix-box">
-                    <p>Pague via PIX</p>
-                    <div class="pix-code" id="pix-8">
-                        00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-42665544000052040000530398654058.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304B2C3
-                        <button class="copy-btn" onclick="copyPix('pix-8')">Copiar</button>
-                    </div>
-                    <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                </div>
-            </div>
-            
-            <div class="package-card popular">
-                <div class="popular-badge">MELHOR CUSTO-BENEFÍCIO</div>
-                <h3>500 Seguidores Premium</h3>
-                <div class="price">R$ <span class="price-value">40,00</span></div>
-                <ul class="features">
-                    <li>Entrega em até 6h</li>
-                    <li>Perfis verificados e ativos</li>
-                    <li>Altíssimo engajamento</li>
-                    <li>Suporte VIP personalizado</li>
-                    <li>Garantia vitalícia</li>
-                    <li>+500 curtidas de bônus</li>
-                </ul>
-                <button class="btn" onclick="selectPackage('500 seguidores - Premium', 40.00)">COMPRAR AGORA</button>
-                <div class="pix-box">
-                    <p>Pague via PIX</p>
-                    <div class="pix-code" id="pix-40">
-                        00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540640.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304D4E5
-                        <button class="copy-btn" onclick="copyPix('pix-40')">Copiar</button>
-                    </div>
-                    <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                </div>
-            </div>
-            
-            <div class="package-card">
-                <h3>1000 Seguidores Premium</h3>
-                <div class="price">R$ <span class="price-value">80,00</span></div>
-                <ul class="features">
-                    <li>Entrega IMEDIATA (1-2h)</li>
-                    <li>Perfis verificados e influentes</li>
-                    <li>Máximo engajamento garantido</li>
-                    <li>Gerente dedicado</li>
-                    <li>Garantia vitalícia</li>
-                    <li>+1000 curtidas de bônus</li>
-                </ul>
-                <button class="btn" onclick="selectPackage('1000 seguidores - Premium', 80.00)">COMPRAR AGORA</button>
-                <div class="pix-box">
-                    <p>Pague via PIX</p>
-                    <div class="pix-code" id="pix-80">
-                        00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540680.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304E5F6
-                        <button class="copy-btn" onclick="copyPix('pix-80')">Copiar</button>
-                    </div>
-                    <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="cta-box">
-            <h2>NÃO PERCA TEMPO!</h2>
-            <p>Escolha seu pacote agora e impulsione suas redes sociais em até 24 horas!</p>
-            <p>Use o PIX para pagamento rápido e seguro!</p>
-            <button class="btn btn-large" onclick="scrollToPayment()">QUERO IMPULSIONAR MINHAS REDES!</button>
-        </div>
-        
-        <div class="testimonial">
-            <p>"Comprei 1000 seguidores e em menos de 12 horas já estava tudo na minha conta! Agora meu perfil chama muito mais atenção e já consegui 3 jobs este mês!"</p>
-            <div class="author">- Maria Silva, Influencer Digital</div>
-        </div>
-        
-        <div class="testimonial">
-            <p>"As curtidas premium são incríveis! Perfis reais e muito engajamento. Minha taxa de conversão aumentou 187% em apenas um mês. Valeu cada centavo!"</p>
-            <div class="author">- João Santos, Empreendedor Digital</div>
-        </div>
-        
-        <div class="guarantee">
-            <h3>GARANTIA DE 7 DIAS OU SEU DINHEIRO DE VOLTA!</h3>
-            <p>Se você não ficar completamente satisfeito com os resultados, devolvemos cada centavo do seu investimento! Sem perguntas, sem complicações.</p>
-        </div>
-        
-        <div class="section">
-            <h2><i class="fas fa-fire"></i> PACOTES DE CURTIDAS</h2>
-            <p class="subheadline">Aumente seu engajamento com curtidas de alta qualidade!</p>
-            
-            <div class="package-container">
-                <div class="package-card">
-                    <h3>1000 Curtidas</h3>
-                    <div class="price">R$ <span class="price-value">8,00</span></div>
-                    <ul class="features">
-                        <li>Entrega em até 24h</li>
-                        <li>Curtidas de qualidade</li>
-                        <li>Suporte 24/7</li>
-                        <li>Garantia de reposição</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('1000 curtidas - Normal', 8.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-8-2">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-42665544000052040000530398654058.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304B2C3
-                            <button class="copy-btn" onclick="copyPix('pix-8-2')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-                
-                <div class="package-card popular">
-                    <div class="popular-badge">MAIS VENDIDO</div>
-                    <h3>5000 Curtidas</h3>
-                    <div class="price">R$ <span class="price-value">40,00</span></div>
-                    <ul class="features">
-                        <li>Entrega em até 12h</li>
-                        <li>Curtidas de alta qualidade</li>
-                        <li>Suporte prioritário</li>
-                        <li>Garantia de 30 dias</li>
-                        <li>+100 seguidores de bônus</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('5000 curtidas - Normal', 40.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-40-2">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540640.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304D4E5
-                            <button class="copy-btn" onclick="copyPix('pix-40-2')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-                
-                <div class="package-card">
-                    <h3>10000 Curtidas</h3>
-                    <div class="price">R$ <span class="price-value">80,00</span></div>
-                    <ul class="features">
-                        <li>Entrega expressa 6h</li>
-                        <li>Curtidas premium</li>
-                        <li>Suporte VIP 24/7</li>
-                        <li>Garantia de 60 dias</li>
-                        <li>+500 seguidores de bônus</li>
-                    </ul>
-                    <button class="btn" onclick="selectPackage('10000 curtidas - Normal', 80.00)">COMPRAR AGORA</button>
-                    <div class="pix-box">
-                        <p>Pague via PIX</p>
-                        <div class="pix-code" id="pix-80-2">
-                            00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426655440000520400005303986540680.005802BR5913TURBO SEGUIDORES6008SAO PAULO61080540900062070503***6304E5F6
-                            <button class="copy-btn" onclick="copyPix('pix-80-2')">Copiar</button>
-                        </div>
-                        <p class="pix-instructions">Copie o código PIX e pague no seu app bancário</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="urgency">
-            🎯 ESTAMOS AQUI PARA VOCÊ CRESCER! FALE CONOSCO NO WHATSAPP!
-        </div>
-    </div>
-    
-    <footer>
+    <section class="hero">
         <div class="container">
-            <p>Turbo Seguidores &copy; 2023 - Todos os direitos reservados</p>
-            <p>Contato: contato@turboseguidores.com | WhatsApp: (11) 99999-9999</p>
+            <h1>IMPULSIONE SUAS REDES SOCIAIS</h1>
+            <p>Obtenha seguidores reais e de alta qualidade que impulsionarão seu engajamento e farão seu perfil decolar. A fórmula comprovada para o sucesso online.</p>
+            <a href="#packages" class="cta-button">Comprar Seguidores Agora</a>
         </div>
-    </footer>
-
-    <script>
-        function selectPackage(packageName, price) {
-            alert('Pacote selecionado: ' + packageName + '\nValor: R$ ' + price.toFixed(2).replace('.', ',') + '\n\nUtilize o código PIX abaixo para pagamento!');
+    </section>
+    
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>PACOTES DE SEGUIDORES</h2>
+            <div class="package-container">
+                <!-- Pacotes Básicos -->
+                <div class="package">
+                    <h3>100 Seguidores</h3>
+                    <div class="price">R$ 3,00</div>
+                    <div class="description">Perfil básico - aumento rápido e eficaz</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>200 Seguidores</h3>
+                    <div class="price">R$ 6,00</div>
+                    <div class="description">Aumento visível - ideal para começar</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>300 Seguidores</h3>
+                    <div class="price">R$ 9,00</div>
+                    <div class="description">Crescimento consistente - melhor custo-benefício</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>500 Seguidores</h3>
+                    <div class="price">R$ 15,00</div>
+                    <div class="description">Presença fortalecida - impacto imediato</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>1000 Seguidores</h3>
+                    <div class="price">R$ 30,00</div>
+                    <div class="description">Perfil relevante - alcance ampliado</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <!-- Pacotes Premium -->
+                <div class="package premium">
+                    <h3>2000 Seguidores</h3>
+                    <div class="price">R$ 90,00</div>
+                    <div class="description">Pacote Premium - Seguidores de alta qualidade com maior taxa de engajamento</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package premium">
+                    <h3>5000 Seguidores</h3>
+                    <div class="price">R$ 225,00</div>
+                    <div class="description">Pacote Premium - Autoridade e influência garantidas</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+                
+                <div class="package premium">
+                    <h3>10000 Seguidores</h3>
+                    <div class="price">R$ 450,00</div>
+                    <div class="description">Pacote Premium - Transforme-se em uma referência na sua área</div>
+                    <button class="buy-button">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="security">
+        <div class="container">
+            <h2>SEGURANÇA E CONFIABILIDADE</h2>
+            <div class="security-items">
+                <div class="security-item">
+                    <i>🔒</i>
+                    <h3>Compra 100% Segura</h3>
+                    <p>Utilizamos criptografia avançada para proteger todos os seus dados e transações. Seus dados financeiros nunca são armazenados em nossos sistemas.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i>⚡</i>
+                    <h3>Entrega Imediata</h3>
+                    <p>Após a confirmação do pagamento, seus seguidores começam a chegar em até 5 minutos. Garantia de entrega rápida ou seu dinheiro de volta.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i>👥</i>
+                    <h3>Seguidores Reais</h3>
+                    <p>Não trabalhamos com bots ou perfis falsos. Todos os seguidores são de usuários reais, garantindo autenticidade e evitando problemas com as plataformas.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i>🛡️</i>
+                    <h3>Proteção Total</h3>
+                    <p>Seu perfil está completamente seguro conosco. Não exigimos sua senha e todo o processo é feito de maneira natural e discreta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Comprei 1000 seguidores e em menos de 1 hora já tinha todos. Meu perfil agora atrai muito mais engajamento orgânico. Recomendo demais!"</p>
+                    <div class="client">- Carlos Silva, Influencer</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Estava hesitante no início, mas decidi arriscar. Fiquei impressionado com a qualidade dos seguidores e o suporte ao cliente. Já estou comprando mais!"</p>
+                    <div class="client">- Amanda Santos, Empreendedora</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Precisava aumentar minha presença digital rapidamente para um lançamento. A Turbo Lux entregou exatamente o que prometeu, no prazo e com qualidade."</p>
+                    <div class="client">- Ricardo Oliveira, Músico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>PERGUNTAS FREQUENTES</h2>
             
-            scrollToPayment();
-        }
-        
-        function scrollToPayment() {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-        }
-        
-        function copyPix(elementId) {
-            const pixElement = document.getElementById(elementId);
-            const textToCopy = pixElement.textContent.replace('Copiar', '').trim();
+            <div class="faq-item">
+                <div class="faq-question">É seguro comprar seguidores?</div>
+                <div class="faq-answer">
+                    <p>Absolutamente. Utilizamos métodos avançados que mimetizam o crescimento orgânico. Nossos seguidores são reais e não violam os termos de serviço das plataformas. Trabalhamos com total transparência e segurança.</p>
+                </div>
+            </div>
             
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert('Código PIX copiado! Agora é só colar no seu app bancário para pagar!');
-            }).catch(err => {
-                console.error('Erro ao copiar texto: ', err);
-            });
-        }
-        
-        // Animação de digitação para o headline
-        document.addEventListener('DOMContentLoaded', function() {
-            const headline = document.querySelector('.headline');
-            const originalText = headline.textContent;
-            headline.textContent = '';
+            <div class="faq-item">
+                <div class="faq-question">Como funciona o processo de entrega?</div>
+                <div class="faq-answer">
+                    <p>Após a confirmação do pagamento, nosso sistema inicia imediatamente o processo de entrega. Em até 5 minutos você começará a receber seguidores, com a entrega completa ocorrendo em até 24 horas dependendo do tamanho do pacote.</p>
+                </div>
+            </div>
             
-            let i = 0;
-            const typeWriter = setInterval(function() {
-                if (i < originalText.length) {
-                    headline.textContent += originalText.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typeWriter);
-                }
-            }, 50);
-        });
-    </script>
-</body>
-</html>
+            <div class="faq-item">
+                <div class="faq-question">Os seguidores são reais?</div>
+                <div class="faq-answer">
+                    <p>Sim! Diferente de serviços que utilizam bots ou perfis falsos, nós garantimos seguidores reais de usuários ativos. Essa é a razão pela qual nossos pacotes premium têm um valor diferenciado - porque oferecemos qualidade superior.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Há risco do meu perfil ser bloqueado?</div>
+                <div class="faq-answer">
+                    <p>Praticamente zero. Nosso método de entrega é gradual e natural, imitando perfeitamente o crescimento orgânico. Trabalhamos dentro das diretrizes das plataformas há anos, sem nenhum caso de bloqueio relatado.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qual a diferença entre os pacotes normais e premium?</div>
+                <div class="faq-answer">
+                    <p>Os pacotes premium oferecem seguidores com taxas de engajamento comprovadamente mais altas, perfis verificados e entrega prioritária. São ideais para quem busca não apenas números, mas influência real.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qual é a política de reembolso?</div>
