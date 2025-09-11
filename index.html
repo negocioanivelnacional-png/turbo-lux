@@ -460,4 +460,809 @@
         
         .testimonial:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .client {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            position: relative;
+        }
+        
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0L60 60" stroke="%23111" stroke-width="1.5"/><path d="M60 0L0 60" stroke="%23111" stroke-width="1.5"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 25px;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .faq-item:nth-child(1) { animation-delay: 0.1s; }
+        .faq-item:nth-child(2) { animation-delay: 0.2s; }
+        .faq-item:nth-child(3) { animation-delay: 0.3s; }
+        .faq-item:nth-child(4) { animation-delay: 0.4s; }
+        .faq-item:nth-child(5) { animation-delay: 0.5s; }
+        .faq-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        .faq-question {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-question::before {
+            content: '▶';
+            margin-right: 10px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active::before {
+            transform: rotate(90deg);
+        }
+        
+        .faq-answer {
+            padding-left: 25px;
+            font-size: 1.1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-answer.open {
+            max-height: 500px;
+        }
+        
+        /* Payment Section */
+        .payment {
+            background-color: var(--gray-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1.5"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1.5"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .payment-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .payment-step {
+            width: 250px;
+            padding: 25px;
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            border-radius: 15px;
+            border: 1px solid var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .payment-step:nth-child(1) { animation-delay: 0.1s; }
+        .payment-step:nth-child(2) { animation-delay: 0.2s; }
+        .payment-step:nth-child(3) { animation-delay: 0.3s; }
+        .payment-step:nth-child(4) { animation-delay: 0.4s; }
+        
+        .payment-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+        }
+        
+        .payment-step i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .payment-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .pix-info {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .pix-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .pix-key {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #111;
+            border-radius: 5px;
+            border: 1px dashed var(--secondary-color);
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--accent-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--gray-color);
+            padding: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            position: relative;
+            animation: modalAppear 0.5s ease-out;
+        }
+        
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #111;
+            color: var(--text-color);
+        }
+        
+        .confirm-purchase {
+            background: linear-gradient(to bottom, var(--secondary-color), var(--dark-red));
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .confirm-purchase:hover {
+            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .package {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .payment-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .security-items {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .testimonial-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Efeito de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleAnimation 10s infinite linear;
+        }
+        
+        @keyframes particleAnimation {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">TURBO LUX</div>
+            <div class="tagline">Aumente sua presença nas redes sociais instantaneamente</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>SUA AUTORIDADE NAS REDES SOCIAIS COMEÇA AQUI</h1>
+            <p>Você já percebeu que <span class="redline-text">perfis com muitos seguidores recebem mais oportunidades, mais clientes e mais autoridade?</span> Não é coincidência - é psicologia humana. E agora, você pode ter essa vantagem trabalhando ao seu favor.</p>
+            <p>Com a Turbo Lux, você obtém seguidores reais e de alta qualidade que impulsionarão seu engajamento e farão seu perfil decolar. <span class="redline-text">A fórmula comprovada para o sucesso online.</span></p>
+            <a href="#packages" class="cta-button">Quero Mais Seguidores Agora</a>
+        </div>
+    </section>
+    
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>ESCOLHA SEU PACOTE DE SEGUIDORES</h2>
+            <div class="package-container">
+                <!-- Pacotes conforme a tabela fornecida -->
+                <div class="package">
+                    <h3>100 seguidores ✨</h3>
+                    <div class="price">R$ 4,00</div>
+                    <div class="description">Perfil básico - aumento rápido e eficaz</div>
+                    <button class="buy-button" data-package="100 seguidores" data-price="4.00">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>200 seguidores 🚀</h3>
+                    <div class="price">R$ 8,00</div>
+                    <div class="description">Aumento visível - ideal para começar</div>
+                    <button class="buy-button" data-package="200 seguidores" data-price="8.00">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>300 seguidores 🌟</h3>
+                    <div class="price">R$ 12,00</div>
+                    <div class="description">Crescimento consistente - melhor custo-benefício</div>
+                    <button class="buy-button" data-package="300 seguidores" data-price="12.00">Comprar Agora</button>
+                </div>
+                
+                <div class="package popular">
+                    <h3>1.000 seguidores 💎</h3>
+                    <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
+                    <div class="description">Perfil relevante - alcance ampliado</div>
+                    <button class="buy-button" data-package="1000 seguidores" data-price="24.90">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>2.000 seguidores ⚡</h3>
+                    <div class="price">R$ 59,80</div>
+                    <div class="bonus">+300 curtidas de bônus</div>
+                    <div class="description">Presença fortalecida - impacto imediato</div>
+                    <button class="buy-button" data-package="2000 seguidores" data-price="59.80">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>3.000 seguidores 🔥</h3>
+                    <div class="price">R$ 89,70</div>
+                    <div class="bonus">+500 curtidas de bônus</div>
+                    <div class="description">Crescimento acelerado - maior visibilidade</div>
+                    <button class="buy-button" data-package="3000 seguidores" data-price="89.70">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>4.000 seguidores 🌈</h3>
+                    <div class="price">R$ 119,60</div>
+                    <div class="bonus">+700 curtidas de bônus</div>
+                    <div class="description">Alcance expandido - mais oportunidades</div>
+                    <button class="buy-button" data-package="4000 seguidores" data-price="119.60">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>5.000 seguidores 🏆</h3>
+                    <div class="price">R$ 149,50</div>
+                    <div class="bonus">+1.000 curtidas de bônus</div>
+                    <div class="description">Influência em crescimento - perfil destacado</div>
+                    <button class="buy-button" data-package="5000 seguidores" data-price="149.50">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>6.000 seguidores 👑</h3>
+                    <div class="price">R$ 179,40</div>
+                    <div class="bonus">+1.200 curtidas de bônus</div>
+                    <div class="description">Presença marcante - reconhecimento garantido</div>
+                    <button class="buy-button" data-package="6000 seguidores" data-price="179.40">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>7.000 seguidores 🌍</h3>
+                    <div class="price">R$ 209,30</div>
+                    <div class="bonus">+1.400 curtidas de bônus</div>
+                    <div class="description">Alcance global - autoridade estabelecida</div>
+                    <button class="buy-button" data-package="7000 seguidores" data-price="209.30">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>8.000 seguidores 💡</h3>
+                    <div class="price">R$ 239,20</div>
+                    <div class="bonus">+1.600 curtidas de bônus</div>
+                    <div class="description">Influência notável - presença destacada</div>
+                    <button class="buy-button" data-package="8000 seguidores" data-price="239.20">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>9.000 seguidores 💫</h3>
+                    <div class="price">R$ 269,10</div>
+                    <div class="bonus">+1.800 curtidas de bônus</div>
+                    <div class="description">Crescimento exponencial - resultados surpreendentes</div>
+                    <button class="buy-button" data-package="9000 seguidores" data-price="269.10">Comprar Agora</button>
+                </div>
+                
+                <div class="package">
+                    <h3>10.000 seguidores 🏅</h3>
+                    <div class="price">R$ 299,00</div>
+                    <div class="bonus">+2.000 curtidas de bônus</div>
+                    <div class="description">Status de autoridade - transforme seu perfil</div>
+                    <button class="buy-button" data-package="10000 seguidores" data-price="299.00">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="security">
+        <div class="container">
+            <h2>SEGURANÇA E CONFIABILIDADE GARANTIDAS</h2>
+            <div class="security-items">
+                <div class="security-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Compra 100% Segura</h3>
+                    <p>Utilizamos criptografia avançada para proteger todos os seus dados e transações. Seus dados financeiros nunca são armazenados em nossos sistemas.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Entrega Imediata</h3>
+                    <p>Após a confirmação do pagamento, seus seguidores começam a chegar em até 5 minutos. Garantia de entrega rápida ou seu dinheiro de volta.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Seguidores Reais</h3>
+                    <p>Não trabalhamos com bots ou perfis falsos. Todos os seguidores são de usuários reais, garantindo autenticidade e evitando problemas com as plataformas.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Proteção Total</h3>
+                    <p>Seu perfil está completamente seguro conosco. Não exigimos sua senha e todo o processo é feito de maneira natural e discreta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Comprei 1000 seguidores e em menos de 1 hora já tinha todos. Meu perfil agora atrai muito mais engajamento orgânico. Recomendo demais!"</p>
+                    <div class="client">- Carlos Silva, Influencer</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Estava hesitante no início, mas decidi arriscar. Fiquei impressionado com a qualidade dos seguidores e o suporte ao cliente. Já estou comprando mais!"</p>
+                    <div class="client">- Amanda Santos, Empreendedora</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Precisava aumentar minha presença digital rapidamente para um lançamento. A Turbo Lux entregou exatamente o que prometeu, no prazo e com qualidade."</p>
+                    <div class="client">- Ricardo Oliveira, Músico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>PERGUNTAS FREQUENTES</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">É seguro comprar seguidores?</div>
+                <div class="faq-answer">
+                    <p>Absolutamente. Utilizamos métodos avançados que mimetizam o crescimento orgânico. Nossos seguidores são reais e não violam os termos de serviço das plataformas. Trabalhamos com total transparência e segurança.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como funciona o processo de entrega?</div>
+                <div class="faq-answer">
+                    <p>Após a confirmação do pagamento, nosso sistema inicia imediatamente o processo de entrega. Em até 5 minutos você começará a receber seguidores, com a entrega completa ocorrendo em até 24 horas dependendo do tamanho do pacote.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Os seguidores são reais?</div>
+                <div class="faq-answer">
+                    <p>Sim! Diferente de serviços que utilizam bots ou perfis falsos, nós garantimos seguidores reais de usuários ativos. Essa é a razão pela qual nossos pacotes premium têm um valor diferenciado - porque oferecemos qualidade superior.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Há risco do meu perfil ser bloqueado?</div>
+                <div class="faq-answer">
+                    <p>Praticamente zero. Nosso método de entrega é gradual e natural, imitando perfeitamente o crescimento orgânico. Trabalhamos dentro das diretrizes das plataformas há anos, sem nenhum caso de bloqueio relatado.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qual a diferença entre os pacotes normais e premium?</div>
+                <div class="faq-answer">
+                    <p>Os pacotes premium oferecem seguidores com taxas de engajamento comprovadamente mais altas, perfis verificados e entrega prioritária. São ideais para quem busca não apenas números, mas influência real.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qual é a política de reembolso?</div>
+                <div class="faq-answer">
+                    <p>Oferecemos reembolso total em caso de não entrega dentro do prazo prometido. Basta entrar em contato com nosso suporte dentro de 7 dias após a compra. Garantimos sua satisfação ou devolvemos seu dinheiro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="payment">
+        <div class="container">
+            <h2>COMO COMPRAR SEUS SEGUIDORES</h2>
+            <div class="payment-steps">
+                <div class="payment-step">
+                    <i class="fas fa-box-open"></i>
+                    <h3>1. Escolha seu pacote</h3>
+                    <p>Selecione o pacote de seguidores ideal para suas necessidades e clique em "Comprar Agora"</p>
+                </div>
+                
+                <div class="payment-step">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>2. Faça o pagamento</h3>
+                    <p>Realize o pagamento via PIX para a chave informada. O processo é rápido e seguro</p>
+                </div>
+                
+                <div class="payment-step">
+                    <i class="fas fa-envelope"></i>
+                    <h3>3. Envie o comprovante</h3>
+                    <p>Envie o comprovante de pagamento para nosso WhatsApp com seu @ do Instagram</p>
+                </div>
+                
+                <div class="payment-step">
+                    <i class="fas fa-users"></i>
+                    <h3>4. Receba seus seguidores</h3>
+                    <p>Após a confirmação do pagamento, seus seguidores serão entregues em até 24 horas</p>
+                </div>
+            </div>
+            
+            <div class="pix-info">
+                <h3>PAGAMENTO VIA PIX</h3>
+                <p>Para finalizar sua compra, realize o pagamento via PIX para a chave abaixo:</p>
+                <div class="pix-key" id="pixKey">18303251759</div>
+                <button class="copy-btn" onclick="copyPixKey()">Copiar Chave PIX</button>
+                <p>Após o pagamento, envie o comprovante para nosso WhatsApp: <strong>(11) 99999-9999</strong> com seu @ do Instagram.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <p>© 2023 Turbo Lux - Todos os direitos reservados</p>
+            <p class="copyright">Turbo Lux não é afiliado ao Instagram ou qualquer outra plataforma de mídia social.</p>
+        </div>
+    </footer>
+    
+    <!-- Modal de Compra -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2>Finalizar Compra</h2>
+            <p>Você está adquirindo: <strong id="selectedPackage"></strong></p>
+            <p>Valor: <strong id="selectedPrice"></strong></p>
+            
+            <div class="form-group">
+                <label for="instagram">Seu @ do Instagram</label>
+                <input type="text" id="instagram" placeholder="@seuusuario">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Seu e-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com">
+            </div>
+            
+            <p>Após clicar em "Confirmar Compra", você receberá as instruções de pagamento via PIX.</p>
+            
+            <button class="confirm-purchase" onclick="confirmPurchase()">Confirmar Compra</button>
+        </div>
+    </div>
+
+    <script>
+        // Animação de partículas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Posição aleatória
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Tamanho aleatório
+                const size = Math.random() * 3 + 1;
+                
+                // Duração aleatória
+                const duration = Math.random() * 10 + 5;
+                
+                // Atraso aleatório
+                const delay = Math.random() * 5;
+                
+                particle.style.left = `${posX}vw`;
+                particle.style.top = `${posY}vh`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // FAQ interactivity
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                question.classList.toggle('active');
+                answer.classList.toggle('open');
+            });
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('purchaseModal');
+        const closeModal = document.getElementById('closeModal');
+        const selectedPackage = document.getElementById('selectedPackage');
+        const selectedPrice = document.getElementById('selectedPrice');
+        
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const package = button.getAttribute('data-package');
+                const price = button.getAttribute('data-price');
+                
+                selectedPackage.textContent = package;
+                selectedPrice.textContent = `R$ ${price}`;
+                
+                modal.style.display = 'flex';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Copy PIX key
+        function copyPixKey() {
+            const pixKey = document.getElementById('pixKey');
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = pixKey.textContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            
+            alert('Chave PIX copiada para a área de transferência!');
+        }
+        
+        // Confirm purchase
+        function confirmPurchase() {
+            const instagram = document.getElementById('instagram').value;
+            const email = document.getElementById('email').value;
+            
+            if (!instagram || !email) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            alert('Compra confirmada! Você receberá um e-mail com as instruções de pagamento em instantes.');
+            modal.style.display = 'none';
+            
+            // Reset form
+            document.getElementById('instagram').value = '';
+            document.getElementById('email').value = '';
+        }
+        
+        // Initialize particles and animations
+        window.addEventListener('load', () => {
+            createParticles();
+            
+            // Animate elements on scroll
+            const animatedElements = document.querySelectorAll('.security-item, .testimonial, .payment-step, .faq-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
