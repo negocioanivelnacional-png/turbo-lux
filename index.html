@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo Lux - Seguidores de Alta Qualidade</title>
+    <title>Turbo Lux - Seguidores Premium com Entrega Imediata</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #000000;
@@ -13,6 +14,7 @@
             --text-color: #ffffff;
             --gray-color: #1a1a1a;
             --dark-red: #cc0000;
+            --gold: #FFD700;
         }
         
         * {
@@ -36,7 +38,7 @@
             padding: 20px;
         }
         
-        /* Header */
+        /* Header animado */
         header {
             background-color: var(--primary-color);
             padding: 20px 0;
@@ -44,16 +46,24 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
         }
         
         .logo {
             font-size: 2.8rem;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--secondary-color);
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 4px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
+            100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
         }
         
         .tagline {
@@ -63,13 +73,25 @@
             color: #ccc;
         }
         
-        /* Hero Section */
+        /* Hero Section com animação */
         .hero {
             text-align: center;
-            padding: 80px 0;
+            padding: 100px 0;
             background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><path d="M0 0L100 100" stroke="%23ff0000" stroke-width="2"/><path d="M100 0L0 100" stroke="%23ff0000" stroke-width="2"/></svg>');
             background-size: cover;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, var(--primary-color) 70%);
+            opacity: 0.5;
         }
         
         .hero::after {
@@ -80,6 +102,12 @@
             width: 100%;
             height: 10px;
             background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            animation: laserLine 3s infinite linear;
+        }
+        
+        @keyframes laserLine {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
         }
         
         .hero h1 {
@@ -88,6 +116,8 @@
             text-transform: uppercase;
             color: var(--secondary-color);
             text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            position: relative;
+            animation: fadeInUp 1s ease-out;
         }
         
         .hero p {
@@ -95,6 +125,7 @@
             max-width: 800px;
             margin: 0 auto 30px;
             font-weight: 500;
+            animation: fadeInUp 1.2s ease-out;
         }
         
         .redline-text {
@@ -102,6 +133,12 @@
             font-weight: bold;
             font-style: italic;
             text-decoration: underline;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+            to { text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6); }
         }
         
         .cta-button {
@@ -117,12 +154,43 @@
             transition: all 0.3s;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
         }
         
         .cta-button:hover {
             background-color: var(--accent-color);
             transform: scale(1.05);
             box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         /* Section Styles */
@@ -137,11 +205,35 @@
             color: var(--secondary-color);
             text-transform: uppercase;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto;
+            border-radius: 2px;
         }
         
         /* Packages Section */
         .packages {
             background-color: var(--gray-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .packages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
+            opacity: 0.3;
         }
         
         .package-container {
@@ -152,20 +244,46 @@
         }
         
         .package {
-            background-color: var(--primary-color);
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
             border: 2px solid var(--secondary-color);
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 30px;
             width: 300px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: packageAppear 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .package:nth-child(1) { animation-delay: 0.1s; }
+        .package:nth-child(2) { animation-delay: 0.2s; }
+        .package:nth-child(3) { animation-delay: 0.3s; }
+        .package:nth-child(4) { animation-delay: 0.4s; }
+        .package:nth-child(5) { animation-delay: 0.5s; }
+        .package:nth-child(6) { animation-delay: 0.6s; }
+        .package:nth-child(7) { animation-delay: 0.7s; }
+        .package:nth-child(8) { animation-delay: 0.8s; }
+        .package:nth-child(9) { animation-delay: 0.9s; }
+        .package:nth-child(10) { animation-delay: 1.0s; }
+        
+        @keyframes packageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
         
         .package:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px var(--secondary-color);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.25);
+            border-color: var(--accent-color);
         }
         
         .package h3 {
@@ -195,50 +313,66 @@
         }
         
         .package .bonus {
-            color: var(--secondary-color);
+            color: var(--gold);
             font-weight: bold;
             margin-bottom: 15px;
+            font-size: 1.1rem;
         }
         
         .package .buy-button {
-            background-color: var(--secondary-color);
+            background: linear-gradient(to bottom, var(--secondary-color), var(--dark-red));
             color: white;
             padding: 12px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             width: 100%;
             font-size: 1.1rem;
-        }
-        
-        .package .buy-button:hover {
-            background-color: var(--accent-color);
-        }
-        
-        .popular {
-            border: 2px solid gold;
             position: relative;
             overflow: hidden;
         }
         
+        .package .buy-button:hover {
+            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        .popular {
+            border: 2px solid var(--gold);
+            transform: scale(1.05);
+        }
+        
         .popular::before {
-            content: "POPULAR";
+            content: "MAIS POPULAR";
             position: absolute;
             top: 15px;
             right: -35px;
-            background: gold;
+            background: var(--gold);
             color: black;
             padding: 5px 40px;
             font-size: 0.9rem;
             font-weight: bold;
             transform: rotate(45deg);
+            z-index: 1;
         }
         
         /* Security Section */
         .security {
             text-align: center;
+            position: relative;
+        }
+        
+        .security::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0L60 60" stroke="%23111" stroke-width="1.5"/><path d="M60 0L0 60" stroke="%23111" stroke-width="1.5"/></svg>');
+            opacity: 0.1;
         }
         
         .security-items {
@@ -251,14 +385,24 @@
         .security-item {
             width: 250px;
             padding: 25px;
-            background-color: var(--gray-color);
-            border-radius: 10px;
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            border-radius: 15px;
             transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
         }
+        
+        .security-item:nth-child(1) { animation-delay: 0.1s; }
+        .security-item:nth-child(2) { animation-delay: 0.2s; }
+        .security-item:nth-child(3) { animation-delay: 0.3s; }
+        .security-item:nth-child(4) { animation-delay: 0.4s; }
         
         .security-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+            border-color: var(--secondary-color);
         }
         
         .security-item i {
@@ -276,6 +420,19 @@
         /* Testimonials */
         .testimonials {
             background-color: var(--gray-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1.5"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1.5"/></svg>');
+            opacity: 0.2;
         }
         
         .testimonial-container {
@@ -286,247 +443,21 @@
         }
         
         .testimonial {
-            background-color: var(--primary-color);
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             width: 300px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
         }
         
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
+        .testimonial:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial:nth-child(3) { animation-delay: 0.3s; }
         
-        .testimonial .client {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        /* FAQ Section */
-        .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 25px;
-        }
-        
-        .faq-question {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-            cursor: pointer;
-        }
-        
-        .faq-answer {
-            padding-left: 20px;
-            font-size: 1.1rem;
-        }
-        
-        /* Payment Section */
-        .payment {
-            background-color: var(--gray-color);
-            text-align: center;
-        }
-        
-        .payment-steps {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .payment-step {
-            width: 250px;
-            padding: 25px;
-            background-color: var(--primary-color);
-            border-radius: 10px;
-            border: 1px solid var(--secondary-color);
-        }
-        
-        .payment-step i {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-        
-        .payment-step h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-        
-        .pix-info {
-            background-color: var(--primary-color);
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            border: 2px solid var(--secondary-color);
-        }
-        
-        .pix-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .pix-key {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #111;
-            border-radius: 5px;
-            border: 1px dashed var(--secondary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--gray-color);
-            padding: 50px 0 30px;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .copyright {
-            color: #999;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .package {
-                width: 100%;
-                max-width: 320px;
-            }
-            
-            section h2 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">TURBO LUX</div>
-            <div class="tagline">Aumente sua presença nas redes sociais instantaneamente</div>
-        </div>
-    </header>
-    
-    <section class="hero">
-        <div class="container">
-            <h1>SUA AUTORIDADE NAS REDES SOCIAIS COMEÇA AQUI</h1>
-            <p>Você já percebeu que <span class="redline-text">perfis com muitos seguidores recebem mais oportunidades, mais clientes e mais autoridade?</span> Não é coincidência - é psicologia humana. E agora, você pode ter essa vantagem trabalhando ao seu favor.</p>
-            <p>Com a Turbo Lux, você obtém seguidores reais e de alta qualidade que impulsionarão seu engajamento e farão seu perfil decolar. <span class="redline-text">A fórmula comprovada para o sucesso online.</span></p>
-            <a href="#packages" class="cta-button">Quero Mais Seguidores Agora</a>
-        </div>
-    </section>
-    
-    <section id="packages" class="packages">
-        <div class="container">
-            <h2>ESCOLHA SEU PACOTE DE SEGUIDORES</h2>
-            <div class="package-container">
-                <!-- Pacotes conforme a tabela fornecida -->
-                <div class="package">
-                    <h3>100 seguidores ✨</h3>
-                    <div class="price">R$ 4,00</div>
-                    <div class="description">Perfil básico - aumento rápido e eficaz</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>200 seguidores 🚀</h3>
-                    <div class="price">R$ 8,00</div>
-                    <div class="description">Aumento visível - ideal para começar</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>300 seguidores 🌟</h3>
-                    <div class="price">R$ 12,00</div>
-                    <div class="description">Crescimento consistente - melhor custo-benefício</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package popular">
-                    <h3>1.000 seguidores 💎</h3>
-                    <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
-                    <div class="description">Perfil relevante - alcance ampliado</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>2.000 seguidores ⚡</h3>
-                    <div class="price">R$ 59,80</div>
-                    <div class="bonus">+300 curtidas de bônus</div>
-                    <div class="description">Presença fortalecida - impacto imediato</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>3.000 seguidores 🔥</h3>
-                    <div class="price">R$ 89,70</div>
-                    <div class="bonus">+500 curtidas de bônus</div>
-                    <div class="description">Crescimento acelerado - maior visibilidade</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>4.000 seguidores 🌈</h3>
-                    <div class="price">R$ 119,60</div>
-                    <div class="bonus">+700 curtidas de bônus</div>
-                    <div class="description">Alcance expandido - mais oportunidades</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>5.000 seguidores 🏆</h3>
-                    <div class="price">R$ 149,50</div>
-                    <div class="bonus">+1.000 curtidas de bônus</div>
-                    <div class="description">Influência em crescimento - perfil destacado</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-                
-                <div class="package">
-                    <h3>10.000 seguidores 🏅</h3>
-                    <div class="price">R$ 299,00</div>
-                    <div class="bonus">+2.000 curtidas de bônus</div>
-                    <div class="description">Status de autoridade - transforme seu perfil</div>
-                    <button class="buy-button">Comprar Agora</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="security">
-        <div class="container">
-            <h2>SEGURANÇA E CONFIABILIDADE GARANTIDAS</h2>
-            <div class="security-items">
-                <div class="security-item">
-                    <i class="fas fa-lock"></i>
-                   
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15
