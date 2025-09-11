@@ -41,7 +41,7 @@
             padding: 20px;
         }
         
-        /* Header animado */
+        /* Header animado com mais efeitos */
         header {
             background-color: var(--primary-color);
             padding: 20px 0;
@@ -50,6 +50,12 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+            animation: headerGlow 3s infinite alternate;
+        }
+        
+        @keyframes headerGlow {
+            0% { box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 5px 25px rgba(255, 0, 0, 0.5); }
         }
         
         .logo {
@@ -60,13 +66,19 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            animation: pulse 2s infinite;
+            animation: pulse 2s infinite, textShine 5s infinite;
         }
         
         @keyframes pulse {
             0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
             50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
             100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+        }
+        
+        @keyframes textShine {
+            0% { background: linear-gradient(45deg, #ff0000, #ff3333, #ff0000); background-clip: text; -webkit-background-clip: text; color: transparent; }
+            50% { background: linear-gradient(45deg, #ff3333, #ff0000, #ff3333); background-clip: text; -webkit-background-clip: text; color: transparent; }
+            100% { background: linear-gradient(45deg, #ff0000, #ff3333, #ff0000); background-clip: text; -webkit-background-clip: text; color: transparent; }
         }
         
         .tagline {
@@ -76,7 +88,7 @@
             color: #ccc;
         }
         
-        /* Hero Section com animação */
+        /* Hero Section com mais animações */
         .hero {
             text-align: center;
             padding: 100px 0;
@@ -95,6 +107,12 @@
             height: 100%;
             background: radial-gradient(circle at center, transparent 0%, var(--primary-color) 70%);
             opacity: 0.5;
+            animation: pulseBackground 5s infinite alternate;
+        }
+        
+        @keyframes pulseBackground {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
         }
         
         .hero::after {
@@ -120,7 +138,12 @@
             color: var(--secondary-color);
             text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
             position: relative;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1s ease-out, titleGlow 3s infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
+            100% { text-shadow: 0 0 25px rgba(255, 0, 0, 0.9), 0 0 35px rgba(255, 0, 0, 0.7); }
         }
         
         .hero p {
@@ -159,7 +182,13 @@
             margin-top: 20px;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 1.4s ease-out;
+            animation: fadeInUp 1.4s ease-out, buttonPulse 2s infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
         }
         
         .cta-button::before {
@@ -209,6 +238,12 @@
             text-transform: uppercase;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
             position: relative;
+            animation: sectionTitleGlow 3s infinite alternate;
+        }
+        
+        @keyframes sectionTitleGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+            100% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.4); }
         }
         
         section h2::after {
@@ -219,9 +254,15 @@
             background: var(--secondary-color);
             margin: 15px auto;
             border-radius: 2px;
+            animation: linePulse 2s infinite alternate;
         }
         
-        /* Packages Section */
+        @keyframes linePulse {
+            0% { width: 100px; box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+            100% { width: 150px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
+        }
+        
+        /* Packages Section com mais animações */
         .packages {
             background-color: var(--gray-color);
             position: relative;
@@ -256,12 +297,24 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s;
+            animation: tabPulse 3s infinite alternate;
+        }
+        
+        @keyframes tabPulse {
+            0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
+            100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
         }
         
         .tab-button.active {
             background: var(--secondary-color);
             color: white;
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            animation: activeTabPulse 2s infinite alternate;
+        }
+        
+        @keyframes activeTabPulse {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.7), 0 0 35px rgba(255, 0, 0, 0.5); }
         }
         
         .tab-content {
@@ -296,8 +349,13 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            animation: packageAppear 0.5s ease-out forwards;
+            animation: packageAppear 0.5s ease-out forwards, packageGlow 3s infinite alternate;
             opacity: 0;
+        }
+        
+        @keyframes packageGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.4); }
         }
         
         .package:nth-child(1) { animation-delay: 0.1s; }
@@ -326,12 +384,18 @@
             transform: translateY(-10px) scale(1.03);
             box-shadow: 0 15px 30px rgba(255, 0, 0, 0.25);
             border-color: var(--accent-color);
+            animation: packageHover 0.3s forwards;
+        }
+        
+        @keyframes packageHover {
+            to { box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3), 0 0 20px rgba(255, 0, 0, 0.5); }
         }
         
         .package h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--secondary-color);
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
         }
         
         .package .price {
@@ -359,6 +423,12 @@
             font-weight: bold;
             margin-bottom: 15px;
             font-size: 1.1rem;
+            animation: bonusPulse 2s infinite alternate;
+        }
+        
+        @keyframes bonusPulse {
+            0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+            100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
         }
         
         .package .buy-button {
@@ -374,6 +444,7 @@
             font-size: 1.1rem;
             position: relative;
             overflow: hidden;
+            animation: buttonPulse 3s infinite alternate;
         }
         
         .package .buy-button:hover {
@@ -384,6 +455,12 @@
         .popular {
             border: 2px solid var(--gold);
             transform: scale(1.05);
+            animation: popularGlow 2s infinite alternate;
+        }
+        
+        @keyframes popularGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.3); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.5); }
         }
         
         .popular::before {
@@ -398,11 +475,23 @@
             font-weight: bold;
             transform: rotate(45deg);
             z-index: 1;
+            animation: popularBadge 2s infinite alternate;
+        }
+        
+        @keyframes popularBadge {
+            0% { background: var(--gold); }
+            100% { background: #ffea00; }
         }
         
         .premium {
             border: 2px solid var(--gold);
             background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            animation: premiumGlow 2s infinite alternate;
+        }
+        
+        @keyframes premiumGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.3); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.5); }
         }
         
         .premium::before {
@@ -422,6 +511,12 @@
         .combo {
             border: 2px solid var(--accent-color);
             background: linear-gradient(145deg, #1a1a1a, #2a1a1a);
+            animation: comboGlow 2s infinite alternate;
+        }
+        
+        @keyframes comboGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 0, 0.3); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5); }
         }
         
         .combo::before {
@@ -470,8 +565,13 @@
             transition: transform 0.3s;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border: 1px solid #333;
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards, securityItemGlow 3s infinite alternate;
             opacity: 0;
+        }
+        
+        @keyframes securityItemGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 0, 0, 0.1); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 0, 0, 0.2); }
         }
         
         .security-item:nth-child(1) { animation-delay: 0.1s; }
@@ -489,6 +589,12 @@
             font-size: 3.5rem;
             color: var(--secondary-color);
             margin-bottom: 20px;
+            animation: iconPulse 2s infinite alternate;
+        }
+        
+        @keyframes iconPulse {
+            0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
+            100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
         }
         
         .security-item h3 {
@@ -530,8 +636,13 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border-left: 4px solid var(--secondary-color);
             transition: transform 0.3s;
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards, testimonialGlow 3s infinite alternate;
             opacity: 0;
+        }
+        
+        @keyframes testimonialGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 0, 0, 0.1); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 0, 0, 0.2); }
         }
         
         .testimonial:nth-child(1) { animation-delay: 0.1s; }
@@ -592,6 +703,12 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            animation: faqPulse 3s infinite alternate;
+        }
+        
+        @keyframes faqPulse {
+            0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.1); }
+            100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); }
         }
         
         .faq-question::before {
@@ -652,8 +769,13 @@
             border: 1px solid var(--secondary-color);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards, paymentStepGlow 3s infinite alternate;
             opacity: 0;
+        }
+        
+        @keyframes paymentStepGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 0, 0, 0.1); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 0, 0, 0.2); }
         }
         
         .payment-step:nth-child(1) { animation-delay: 0.1s; }
@@ -670,6 +792,7 @@
             font-size: 3rem;
             color: var(--secondary-color);
             margin-bottom: 15px;
+            animation: iconPulse 2s infinite alternate;
         }
         
         .payment-step h3 {
@@ -686,7 +809,12 @@
             margin: 0 auto;
             border: 2px solid var(--secondary-color);
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-            animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out, pixInfoGlow 3s infinite alternate;
+        }
+        
+        @keyframes pixInfoGlow {
+            0% { box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3); }
         }
         
         .pix-info h3 {
@@ -704,6 +832,12 @@
             border-radius: 5px;
             border: 1px dashed var(--secondary-color);
             word-break: break-all;
+            animation: pixKeyPulse 2s infinite alternate;
+        }
+        
+        @keyframes pixKeyPulse {
+            0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); }
         }
         
         .copy-btn {
@@ -716,6 +850,7 @@
             font-weight: bold;
             transition: background 0.3s;
             margin-top: 10px;
+            animation: buttonPulse 3s infinite alternate;
         }
         
         .copy-btn:hover {
@@ -728,6 +863,12 @@
             background: white;
             border-radius: 10px;
             display: inline-block;
+            animation: qrPulse 3s infinite alternate;
+        }
+        
+        @keyframes qrPulse {
+            0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
         }
         
         /* Footer */
@@ -795,7 +936,7 @@
             border: 2px solid var(--secondary-color);
             box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
             position: relative;
-            animation: modalAppear 0.5s ease-out;
+            animation: modalAppear 0.5s ease-out, modalGlow 3s infinite alternate;
         }
         
         @keyframes modalAppear {
@@ -807,6 +948,11 @@
                 opacity: 1;
                 transform: scale(1) translateY(0);
             }
+        }
+        
+        @keyframes modalGlow {
+            0% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.3); }
+            100% { box-shadow: 0 0 70px rgba(255, 0, 0, 0.5); }
         }
         
         .close-modal {
@@ -850,10 +996,42 @@
             width: 100%;
             font-size: 1.1rem;
             margin-top: 20px;
+            animation: buttonPulse 3s infinite alternate;
         }
         
         .confirm-purchase:hover {
             background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+        }
+        
+        .modal-pix-info {
+            background: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px dashed var(--secondary-color);
+            animation: pixKeyPulse 2s infinite alternate;
+        }
+        
+        .modal-pix-key {
+            font-weight: bold;
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+        
+        .modal-copy-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .modal-copy-btn:hover {
+            background: var(--accent-color);
         }
         
         /* Efeito de partículas */
@@ -955,7 +1133,7 @@
             
             <div class="package-tabs">
                 <button class="tab-button active" data-tab="followers">Seguidores</button>
-                <button class="tab-button" data-tab="premium">Premium</button>
+                <button class="tab-button" data-tab="premium">Seguidores Premium</button>
                 <button class="tab-button" data-tab="likes">Curtidas</button>
                 <button class="tab-button" data-tab="combos">Combos</button>
             </div>
@@ -1051,457 +1229,4 @@
                     <div class="package premium">
                         <h3>500 seguidores Premium 💎</h3>
                         <div class="price">R$ 60,00</div>
-                        <div class="description">Aumento significativo com seguidores de alta qualidade</div>
-                        <button class="buy-button" data-package="500 seguidores Premium" data-price="60.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package premium popular">
-                        <h3>1.000 seguidores Premium ⚡</h3>
-                        <div class="price">R$ 120,00</div>
-                        <div class="description">Pacote premium mais popular - resultado garantido</div>
-                        <button class="buy-button" data-package="1000 seguidores Premium" data-price="120.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package premium">
-                        <h3>2.000 seguidores Premium 🔥</h3>
-                        <div class="price">R$ 240,00</div>
-                        <div class="bonus">+500 curtidas premium</div>
-                        <div class="description">Crescimento acelerado com engajamento garantido</div>
-                        <button class="buy-button" data-package="2000 seguidores Premium" data-price="240.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package premium">
-                        <h3>5.000 seguidores Premium 🏆</h3>
-                        <div class="price">R$ 600,00</div>
-                        <div class="bonus">+1.500 curtidas premium</div>
-                        <div class="description">Transforme seu perfil em uma autoridade</div>
-                        <button class="buy-button" data-package="5000 seguidores Premium" data-price="600.00">Comprar Agora</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="likes-tab">
-                <div class="package-container">
-                    <div class="package">
-                        <h3>100 curtidas 👍</h3>
-                        <div class="price">R$ 2,00</div>
-                        <div class="description">Aumente o engajamento dos seus posts</div>
-                        <button class="buy-button" data-package="100 curtidas" data-price="2.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package">
-                        <h3>500 curtidas 🔥</h3>
-                        <div class="price">R$ 8,00</div>
-                        <div class="description">Destaque seus conteúdos mais importantes</div>
-                        <button class="buy-button" data-package="500 curtidas" data-price="8.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package popular">
-                        <h3>1.000 curtidas ⚡</h3>
-                        <div class="price">R$ 12,00</div>
-                        <div class="description">Pacote ideal para aumentar a visibilidade</div>
-                        <button class="buy-button" data-package="1000 curtidas" data-price="12.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package">
-                        <h3>2.000 curtidas 💎</h3>
-                        <div class="price">R$ 20,00</div>
-                        <div class="description">Maximize o alcance dos seus posts</div>
-                        <button class="buy-button" data-package="2000 curtidas" data-price="20.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package">
-                        <h3>5.000 curtidas 🏆</h3>
-                        <div class="price">R$ 45,00</div>
-                        <div class="description">Engajamento massivo para seus conteúdos</div>
-                        <button class="buy-button" data-package="5000 curtidas" data-price="45.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package">
-                        <h3>10.000 curtidas 🌟</h3>
-                        <div class="price">R$ 80,00</div>
-                        <div class="description">Transforme seus posts em virais</div>
-                        <button class="buy-button" data-package="10000 curtidas" data-price="80.00">Comprar Agora</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="combos-tab">
-                <div class="package-container">
-                    <div class="package combo">
-                        <h3>Combo Bronze 🥉</h3>
-                        <div class="price">R$ 30,00</div>
-                        <div class="description">500 seguidores + 500 curtidas</div>
-                        <div class="bonus">Economize R$ 10,00</div>
-                        <button class="buy-button" data-package="Combo Bronze" data-price="30.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package combo popular">
-                        <h3>Combo Prata 🥈</h3>
-                        <div class="price">R$ 50,00</div>
-                        <div class="description">1.000 seguidores + 1.000 curtidas</div>
-                        <div class="bonus">Economize R$ 20,00</div>
-                        <button class="buy-button" data-package="Combo Prata" data-price="50.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package combo">
-                        <h3>Combo Ouro 🥇</h3>
-                        <div class="price">R$ 120,00</div>
-                        <div class="description">3.000 seguidores + 2.000 curtidas</div>
-                        <div class="bonus">Economize R$ 40,00</div>
-                        <button class="buy-button" data-package="Combo Ouro" data-price="120.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package combo">
-                        <h3>Combo Platinum 💎</h3>
-                        <div class="price">R$ 200,00</div>
-                        <div class="description">5.000 seguidores + 5.000 curtidas</div>
-                        <div class="bonus">Economize R$ 80,00</div>
-                        <button class="buy-button" data-package="Combo Platinum" data-price="200.00">Comprar Agora</button>
-                    </div>
-                    
-                    <div class="package combo">
-                        <h3>Combo Diamante ✨</h3>
-                        <div class="price">R$ 350,00</div>
-                        <div class="description">10.000 seguidores + 10.000 curtidas</div>
-                        <div class="bonus">Economize R$ 150,00</div>
-                        <button class="buy-button" data-package="Combo Diamante" data-price="350.00">Comprar Agora</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="security">
-        <div class="container">
-            <h2>SEGURANÇA E CONFIABILIDADE GARANTIDAS</h2>
-            <div class="security-items">
-                <div class="security-item">
-                    <i class="fas fa-lock"></i>
-                    <h3>Compra 100% Segura</h3>
-                    <p>Utilizamos criptografia avançada para proteger todos os seus dados e transações. Seus dados financeiros nunca são armazenados em nossos sistemas.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Entrega Imediata</h3>
-                    <p>Após a confirmação do pagamento, seus seguidores começam a chegar em até 5 minutos. Garantia de entrega rápida ou seu dinheiro de volta.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-users"></i>
-                    <h3>Seguidores Reais</h3>
-                    <p>Não trabalhamos com bots ou perfis falsos. Todos os seguidores são de usuários reais, garantindo autenticidade e evitando problemas com as plataformas.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Proteção Total</h3>
-                    <p>Seu perfil está completamente seguro conosco. Não exigimos sua senha e todo o processo é feito de maneira natural e discreta.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <div class="container">
-            <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
-            <div class="testimonial-container">
-                <div class="testimonial">
-                    <p>"Comprei 1000 seguidores e em menos de 1 hora já tinha todos. Meu perfil agora atrai muito mais engajamento orgânico. Recomendo demais!"</p>
-                    <div class="client">- Carlos Silva, Influencer</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"Estava hesitante no início, mas decidi arriscar. Fiquei impressionado com a qualidade dos seguidores e o suporte ao cliente. Já estou comprando mais!"</p>
-                    <div class="client">- Amanda Santos, Empreendedora</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"Precisava aumentar minha presença digital rapidamente para um lançamento. A Turbo Lux entregou exatamente o que prometeu, no prazo e com qualidade."</p>
-                    <div class="client">- Ricardo Oliveira, Músico</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="faq">
-        <div class="container">
-            <h2>PERGUNTAS FREQUENTES</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">É seguro comprar seguidores?</div>
-                <div class="faq-answer">
-                    <p>Absolutamente. Utilizamos métodos avançados que mimetizam o crescimento orgânico. Nossos seguidores são reais e não violam os termos de serviço das plataformas. Trabalhamos com total transparência e segurança.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Como funciona o processo de entrega?</div>
-                <div class="faq-answer">
-                    <p>Após a confirmação do pagamento, nosso sistema inicia imediatamente o processo de entrega. Em até 5 minutos você começará a receber seguidores, com a entrega completa ocorrendo em até 24 horas dependendo do tamanho do pacote.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Os seguidores são reais?</div>
-                <div class="faq-answer">
-                    <p>Sim! Diferente de serviços que utilizam bots ou perfis falsos, nós garantimos seguidores reais de usuários ativos. Essa é a razão pela qual nossos pacotes premium têm um valor diferenciado - porque oferecemos qualidade superior.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Há risco do meu perfil ser bloqueado?</div>
-                <div class="faq-answer">
-                    <p>Praticamente zero. Nosso método de entrega é gradual e natural, imitando perfeitamente o crescimento orgânico. Trabalhamos dentro das diretrizes das plataformas há anos, sem nenhum caso de bloqueio relatado.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Qual a diferença entre os pacotes normais e premium?</div>
-                <div class="faq-answer">
-                    <p>Os pacotes premium oferecem seguidores com taxas de engajamento comprovadamente mais altas, perfis verificados e entrega prioritária. São ideais para quem busca não apenas números, mas influência real.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Qual é a política de reembolso?</div>
-                <div class="faq-answer">
-                    <p>Oferecemos reembolso total em caso de não entrega dentro do prazo prometido. Basta entrar em contato com nosso suporte dentro de 7 dias após a compra. Garantimos sua satisfação ou devolvemos seu dinheiro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="payment">
-        <div class="container">
-            <h2>COMO COMPRAR SEUS SEGUIDORES</h2>
-            <div class="payment-steps">
-                <div class="payment-step">
-                    <i class="fas fa-box-open"></i>
-                    <h3>1. Escolha seu pacote</h3>
-                    <p>Selecione o pacote de seguidores ideal para suas necessidades e clique em "Comprar Agora"</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>2. Faça o pagamento</h3>
-                    <p>Realize o pagamento via PIX para a chave informada. O processo é rápido e seguro</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-envelope"></i>
-                    <h3>3. Envie o comprovante</h3>
-                    <p>Envie o comprovante de pagamento para nosso WhatsApp com seu @ do Instagram</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-users"></i>
-                    <h3>4. Receba seus seguidores</h3>
-                    <p>Após a confirmação do pagamento, seus seguidores serão entregues em até 24 horas</p>
-                </div>
-            </div>
-            
-            <div class="pix-info">
-                <h3>PAGAMENTO VIA PIX</h3>
-                <p>Para finalizar sua compra, realize o pagamento via PIX para a chave abaixo:</p>
-                <div class="pix-key" id="pixKey">00020126550014br.gov.bcb.pix0111183032517590218turbo lux services5204000053039865802BR5920DANIEL DE JESUS LIMA6005VIANA62580520SAN2025091121182110650300017br.gov.bcb.brcode01051.0.06304E8F7</div>
-                <button class="copy-btn" onclick="copyPixKey()">Copiar Chave PIX</button>
-                
-                <div class="qrcode-container" id="qrcode"></div>
-                
-                <p>Após o pagamento, envie o comprovante para nosso WhatsApp: <strong>(11) 99999-9999</strong> com seu @ do Instagram.</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Termos de Uso</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Contato</a>
-            </div>
-            <p>© 2023 Turbo Lux - Todos os direitos reservados</p>
-            <p class="copyright">Turbo Lux não é afiliado ao Instagram ou qualquer outra plataforma de mídia social.</p>
-        </div>
-    </footer>
-    
-    <!-- Modal de Compra -->
-    <div class="modal" id="purchaseModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <h2>Finalizar Compra</h2>
-            <p>Você está adquirindo: <strong id="selectedPackage"></strong></p>
-            <p>Valor: <strong id="selectedPrice"></strong></p>
-            
-            <div class="form-group">
-                <label for="instagram">Seu @ do Instagram</label>
-                <input type="text" id="instagram" placeholder="@seuusuario">
-            </div>
-            
-            <p>Após clicar em "Confirmar Compra", você receberá as instruções de pagamento via PIX.</p>
-            
-            <button class="confirm-purchase" onclick="confirmPurchase()">Confirmar Compra</button>
-        </div>
-    </div>
-
-    <script>
-        // Animação de partículas
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const numberOfParticles = 50;
-            
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Posição aleatória
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                
-                // Tamanho aleatório
-                const size = Math.random() * 3 + 1;
-                
-                // Duração aleatória
-                const duration = Math.random() * 10 + 5;
-                
-                // Atraso aleatório
-                const delay = Math.random() * 5;
-                
-                particle.style.left = `${posX}vw`;
-                particle.style.top = `${posY}vh`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // FAQ interactivity
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                question.classList.toggle('active');
-                answer.classList.toggle('open');
-            });
-        });
-        
-        // Tab functionality
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and tabs
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-                
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                // Show corresponding tab
-                const tabId = button.getAttribute('data-tab') + '-tab';
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Modal functionality
-        const modal = document.getElementById('purchaseModal');
-        const closeModal = document.getElementById('closeModal');
-        const selectedPackage = document.getElementById('selectedPackage');
-        const selectedPrice = document.getElementById('selectedPrice');
-        
-        document.querySelectorAll('.buy-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const package = button.getAttribute('data-package');
-                const price = button.getAttribute('data-price');
-                
-                selectedPackage.textContent = package;
-                selectedPrice.textContent = `R$ ${price}`;
-                
-                modal.style.display = 'flex';
-            });
-        });
-        
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-        
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-        
-        // Copy PIX key
-        function copyPixKey() {
-            const pixKey = document.getElementById('pixKey');
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = pixKey.textContent;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-            
-            alert('Chave PIX copiada para a área de transferência!');
-        }
-        
-        // Generate QR Code
-        function generateQRCode() {
-            const pixPayload = "00020126550014br.gov.bcb.pix0111183032517590218turbo lux services5204000053039865802BR5920DANIEL DE JESUS LIMA6005VIANA62580520SAN2025091121182110650300017br.gov.bcb.brcode01051.0.06304E8F7";
-            const qrcodeContainer = document.getElementById('qrcode');
-            
-            // Clear previous QR code
-            qrcodeContainer.innerHTML = '';
-            
-            // Generate new QR code
-            new QRCode(qrcodeContainer, {
-                text: pixPayload,
-                width: 150,
-                height: 150,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
-        }
-        
-        // Confirm purchase
-        function confirmPurchase() {
-            const instagram = document.getElementById('instagram').value;
-            
-            if (!instagram) {
-                alert('Por favor, informe seu @ do Instagram.');
-                return;
-            }
-            
-            alert('Compra confirmada! Você receberá um e-mail com as instruções de pagamento em instantes.');
-            modal.style.display = 'none';
-            
-            // Reset form
-            document.getElementById('instagram').value = '';
-        }
-        
-        // Initialize particles and animations
-        window.addEventListener('load', () => {
-            createParticles();
-            generateQRCode();
-            
-            // Animate elements on scroll
-            const animatedElements = document.querySelectorAll('.security-item, .testimonial, .payment-step, .faq-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-</body>
-</html>
+                        <div class="description">Aumento significativo
