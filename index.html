@@ -426,509 +426,6 @@
             animation: bonusPulse 2s infinite alternate;
         }
         
-        @keyframes bonusPulse {
-            0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
-            100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        }
-        
-        .package .buy-button {
-            background: linear-gradient(to bottom, var(--secondary-color), var(--dark-red));
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            width: 100%;
-            font-size: 1.1rem;
-            position: relative;
-            overflow: hidden;
-            animation: buttonPulse 3s infinite alternate;
-        }
-        
-        .package .buy-button:hover {
-            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-        }
-        
-        .popular {
-            border: 2px solid var(--gold);
-            transform: scale(1.05);
-            animation: popularGlow 2s infinite alternate;
-        }
-        
-        @keyframes popularGlow {
-            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.3); }
-            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.5); }
-        }
-        
-        .popular::before {
-            content: "MAIS POPULAR";
-            position: absolute;
-            top: 15px;
-            right: -35px;
-            background: var(--gold);
-            color: black;
-            padding: 5px 40px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transform: rotate(45deg);
-            z-index: 1;
-            animation: popularBadge 2s infinite alternate;
-        }
-        
-        @keyframes popularBadge {
-            0% { background: var(--gold); }
-            100% { background: #ffea00; }
-        }
-        
-        .premium {
-            border: 2px solid var(--gold);
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-            animation: premiumGlow 2s infinite alternate;
-        }
-        
-        @keyframes premiumGlow {
-            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.3); }
-            # Site Turbo Lux - Completo e Funcional
-
-Aqui está o código HTML completo com todas as abas funcionando e a seção de depoimentos com imagens:
-
-```html
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo Lux - Seguidores Premium com Entrega Imediata</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #ff0000;
-            --accent-color: #ff3333;
-            --text-color: #ffffff;
-            --gray-color: #1a1a1a;
-            --dark-red: #cc0000;
-            --gold: #FFD700;
-            --silver: #C0C0C0;
-            --bronze: #CD7F32;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', 'Roboto', sans-serif;
-        }
-        
-        body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header animado com mais efeitos */
-        header {
-            background-color: var(--primary-color);
-            padding: 20px 0;
-            border-bottom: 2px solid var(--secondary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
-            animation: headerGlow 3s infinite alternate;
-        }
-        
-        @keyframes headerGlow {
-            0% { box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2); }
-            100% { box-shadow: 0 5px 25px rgba(255, 0, 0, 0.5); }
-        }
-        
-        .logo {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--secondary-color);
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            animation: pulse 2s infinite, textShine 5s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
-            100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-        }
-        
-        @keyframes textShine {
-            0% { background: linear-gradient(45deg, #ff0000, #ff3333, #ff0000); background-clip: text; -webkit-background-clip: text; color: transparent; }
-            50% { background: linear-gradient(45deg, #ff3333, #ff0000, #ff3333); background-clip: text; -webkit-background-clip: text; color: transparent; }
-            100% { background: linear-gradient(45deg, #ff0000, #ff3333, #ff0000); background-clip: text; -webkit-background-clip: text; color: transparent; }
-        }
-        
-        .tagline {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #ccc;
-        }
-        
-        /* Hero Section com mais animações */
-        .hero {
-            text-align: center;
-            padding: 100px 0;
-            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><path d="M0 0L100 100" stroke="%23ff0000" stroke-width="2"/><path d="M100 0L0 100" stroke="%23ff0000" stroke-width="2"/></svg>');
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--primary-color) 70%);
-            opacity: 0.5;
-            animation: pulseBackground 5s infinite alternate;
-        }
-        
-        @keyframes pulseBackground {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-            animation: laserLine 3s infinite linear;
-        }
-        
-        @keyframes laserLine {
-            0% { background-position: -100% 0; }
-            100% { background-position: 200% 0; }
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: var(--secondary-color);
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-            position: relative;
-            animation: fadeInUp 1s ease-out, titleGlow 3s infinite alternate;
-        }
-        
-        @keyframes titleGlow {
-            0% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
-            100% { text-shadow: 0 0 25px rgba(255, 0, 0, 0.9), 0 0 35px rgba(255, 0, 0, 0.7); }
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-weight: 500;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        .redline-text {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-style: italic;
-            text-decoration: underline;
-            animation: glow 2s infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
-            to { text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6); }
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 18px 45px;
-            font-size: 1.3rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1.4s ease-out, buttonPulse 2s infinite;
-        }
-        
-        @keyframes buttonPulse {
-            0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6); }
-           100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { left: -50%; }
-            100% { left: 150%; }
-        }
-        
-        .cta-button:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 70px 0;
-        }
-        
-        section h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            color: var(--secondary-color);
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-            position: relative;
-            animation: sectionTitleGlow 3s infinite alternate;
-        }
-        
-        @keyframes sectionTitleGlow {
-            0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
-            100% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.4); }
-        }
-        
-        section h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--secondary-color);
-            margin: 15px auto;
-            border-radius: 2px;
-            animation: linePulse 2s infinite alternate;
-        }
-        
-        @keyframes linePulse {
-            0% { width: 100px; box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
-            100% { width: 150px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); }
-        }
-        
-        /* Packages Section com mais animações */
-        .packages {
-            background-color: var(--gray-color);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .packages::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .package-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-button {
-            background: var(--primary-color);
-            color: var(--text-color);
-            border: 2px solid var(--secondary-color);
-            padding: 12px 25px;
-            margin: 0 10px 10px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            animation: tabPulse 3s infinite alternate;
-        }
-        
-        @keyframes tabPulse {
-            0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
-            100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
-        }
-        
-        .tab-button.active {
-            background: var(--secondary-color);
-            color: white;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-            animation: activeTabPulse 2s infinite alternate;
-        }
-        
-        @keyframes activeTabPulse {
-            0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
-            100% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.7), 0 0 35px rgba(255, 0, 0, 0.5); }
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .package-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-        }
-        
-        .package {
-            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            border: 2px solid var(--secondary-color);
-            border-radius: 15px;
-            padding: 30px;
-            width: 300px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            animation: packageAppear 0.5s ease-out forwards, packageGlow 3s infinite alternate;
-            opacity: 0;
-        }
-        
-        @keyframes packageGlow {
-            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 0, 0, 0.2); }
-            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.4); }
-        }
-        
-        .package:nth-child(1) { animation-delay: 0.1s; }
-        .package:nth-child(2) { animation-delay: 0.2s; }
-        .package:nth-child(3) { animation-delay: 0.3s; }
-        .package:nth-child(4) { animation-delay: 0.4s; }
-        .package:nth-child(5) { animation-delay: 0.5s; }
-        .package:nth-child(6) { animation-delay: 0.6s; }
-        .package:nth-child(7) { animation-delay: 0.7s; }
-        .package:nth-child(8) { animation-delay: 0.8s; }
-        .package:nth-child(9) { animation-delay: 0.9s; }
-        .package:nth-child(10) { animation-delay: 1.0s; }
-        
-        @keyframes packageAppear {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        .package:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.25);
-            border-color: var(--accent-color);
-            animation: packageHover 0.3s forwards;
-        }
-        
-        @keyframes packageHover {
-            to { box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3), 0 0 20px rgba(255, 0, 0, 0.5); }
-        }
-        
-        .package h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
-        }
-        
-        .package .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-        
-        .package .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-        
-        .package .description {
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            min-height: 60px;
-        }
-        
-        .package .bonus {
-            color: var(--gold);
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            animation: bonusPulse 2s infinite alternate;
-        }
-        
-        @keyframes bonusPulse {
-            0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
-            100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        }
-        
         .package .buy-button {
             background: linear-gradient(to bottom, var(--secondary-color), var(--dark-red));
             color: white;
@@ -1284,4 +781,647 @@ Aqui está o código HTML completo com todas as abas funcionando e a seção de 
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100'
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1.5"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1.5"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .payment-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .payment-step {
+            width: 250px;
+            padding: 25px;
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            border-radius: 15px;
+            border: 1px solid var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            animation: fadeInUp 0.8s ease-out forwards, paymentStepGlow 3s infinite alternate;
+            opacity: 0;
+        }
+        
+        @keyframes paymentStepGlow {
+            0% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 0, 0, 0.1); }
+            100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 0, 0, 0.2); }
+        }
+        
+        .payment-step:nth-child(1) { animation-delay: 0.1s; }
+        .payment-step:nth-child(2) { animation-delay: 0.2s; }
+        .payment-step:nth-child(3) { animation-delay: 0.3s; }
+        .payment-step:nth-child(4) { animation-delay: 0.4s; }
+        
+        .payment-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+        }
+        
+        .payment-step i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .payment-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .pix-info {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out, pixInfoGlow 3s infinite alternate;
+        }
+        
+        @keyframes pixInfoGlow {
+            0% { box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3); }
+        }
+        
+        .pix-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .pix-key {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #111;
+            border-radius: 5px;
+            border: 1px dashed var(--secondary-color);
+            word-break: break-all;
+            animation: pixKeyPulse 2s infinite alternate;
+        }
+        
+        @keyframes pixKeyPulse {
+            0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); }
+        }
+        
+        .copy-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--accent-color);
+        }
+        
+        .qrcode-container {
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--gray-color);
+            padding: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #111;
+            color: var(--text-color);
+        }
+        
+        .confirm-purchase {
+            background: linear-gradient(to bottom, var(--secondary-color), var(--dark-red));
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .confirm-purchase:hover {
+            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+        }
+        
+        .modal-pix-info {
+            background: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px dashed var(--secondary-color);
+        }
+        
+        .modal-pix-key {
+            font-weight: bold;
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+        
+        .modal-copy-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .modal-copy-btn:hover {
+            background: var(--accent-color);
+        }
+        
+        /* Efeito de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleAnimation 10s infinite linear;
+        }
+        
+        @keyframes particleAnimation {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .package {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .payment-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .security-items {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .testimonial-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                margin-bottom: 10px;
+            }
+            
+            .testimonials-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">TURBO LUX</div>
+            <div class="tagline">Aumente sua presença nas redes sociais instantaneamente</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>SUA AUTORIDADE NAS REDES SOCIAIS COMEÇA AQUI</h1>
+            <p>Você já percebeu que <span class="redline-text">perfis com muitos seguidores recebem mais oportunidades, mais clientes e mais autoridade?</span> Não é coincidência - é psicologia humana. E agora, você pode have essa vantagem trabalhando ao seu favor.</p>
+            <p>Com a Turbo Lux, você obtém seguidores reais e de alta qualidade que impulsionarão seu engajamento e farão seu perfil decolar. <span class="redline-text">A fórmula comprovada para o sucesso online.</span></p>
+            <a href="#packages" class="cta-button">Quero Mais Seguidores Agora</a>
+        </div>
+    </section>
+    
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>ESCOLHA SEU PACOTE DE SEGUIDORES</h2>
+            
+            <div class="package-tabs">
+                <button class="tab-button active" data-tab="followers">Seguidores</button>
+                <button class="tab-button" data-tab="premium">Seguidores Premium</button>
+                <button class="tab-button" data-tab="likes">Curtidas</button>
+                <button class="tab-button" data-tab="combos">Combos</button>
+            </div>
+            
+            <div class="tab-content active" id="followers-tab">
+                <div class="package-container">
+                    <div class="package">
+                        <h3>100 seguidores ✨</h3>
+                        <div class="price">R$ 4,00</div>
+                        <div class="description">Perfil básico - aumento rápido e eficaz</div>
+                        <button class="buy-button" data-package="100 seguidores" data-price="4.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>200 seguidores 🚀</h3>
+                        <div class="price">R$ 8,00</div>
+                        <div class="description">Aumento visível - ideal para começar</div>
+                        <button class="buy-button" data-package="200 seguidores" data-price="8.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>300 seguidores 🌟</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Crescimento consistente - melhor custo-benefício</div>
+                        <button class="buy-button" data-package="300 seguidores" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package popular">
+                        <h3>1.000 seguidores 💎</h3>
+                        <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
+                        <div class="description">Perfil relevante - alcance ampliado</div>
+                        <button class="buy-button" data-package="1000 seguidores" data-price="24.90">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>2.000 seguidores ⚡</h3>
+                        <div class="price">R$ 59,80</div>
+                        <div class="bonus">+300 curtidas de bônus</div>
+                        <div class="description">Presença fortalecida - impacto imediato</div>
+                        <button class="buy-button" data-package="2000 seguidores" data-price="59.80">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>3.000 seguidores 🔥</h3>
+                        <div class="price">R$ 89,70</div>
+                        <div class="bonus">+500 curtidas de bônus</div>
+                        <div class="description">Crescimento acelerado - maior visibilidade</div>
+                        <button class="buy-button" data-package="3000 seguidores" data-price="89.70">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>4.000 seguidores 🌈</h3>
+                        <div class="price">R$ 119,60</div>
+                        <div class="bonus">+700 curtidas de bônus</div>
+                        <div class="description">Alcance expandido - mais oportunidades</div>
+                        <button class="buy-button" data-package="4000 seguidores" data-price="119.60">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>5.000 seguidores 🏆</h3>
+                        <div class="price">R$ 149,50</div>
+                        <div class="bonus">+1.000 curtidas de bônus</div>
+                        <div class="description">Influência em crescimento - perfil destacado</div>
+                        <button class="buy-button" data-package="5000 seguidores" data-price="149.50">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>10.000 seguidores 🏅</h3>
+                        <div class="price">R$ 299,00</div>
+                        <div class="bonus">+2.000 curtidas de bônus</div>
+                        <div class="description">Status de autoridade - transforme seu perfil</div>
+                        <button class="buy-button" data-package="10000 seguidores" data-price="299.00">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="premium-tab">
+                <div class="package-container">
+                    <div class="package premium">
+                        <h3>100 seguidores Premium ✨</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Seguidores de alta qualidade com maior taxa de engajamento</div>
+                        <button class="buy-button" data-package="100 seguidores Premium" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>200 seguidores Premium 🚀</h3>
+                        <div class="price">R$ 24,00</div>
+                        <div class="description">Perfis verificados e com alta taxa de interação</div>
+                        <button class="buy-button" data-package="200 seguidores Premium" data-price="24.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>500 seguidores Premium 💎</h3>
+                        <div class="price">R$ 60,00</div>
+                        <div class="bonus">+100 curtidas de bônus</div>
+                        <div class="description">Seguidores premium com altíssima taxa de engajamento</div>
+                        <button class="buy-button" data-package="500 seguidores Premium" data-price="60.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package premium">
+                        <h3>1.000 seguidores Premium ⚡</h3>
+                        <div class="price">R$ 120,00</div>
+                        <div class="bonus">+250 curtidas de bônus</div>
+                        <div class="description">Perfil de influenciador - máximo engajamento</div>
+                        <button class="buy-button" data-package="1000 seguidores Premium" data-price="120.00">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="likes-tab">
+                <div class="package-container">
+                    <div class="package">
+                        <h3>100 curtidas ✨</h3>
+                        <div class="price">R$ 2,00</div>
+                        <div class="description">Aumento rápido de engajamento</div>
+                        <button class="buy-button" data-package="100 curtidas" data-price="2.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>500 curtidas 🚀</h3>
+                        <div class="price">R$ 9,00</div>
+                        <div class="description">Visibilidade ampliada para suas postagens</div>
+                        <button class="buy-button" data-package="500 curtidas" data-price="9.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package popular">
+                        <h3>1.000 curtidas 💎</h3>
+                        <div class="price"><span class="old-price">R$ 20,00</span> R$ 15,00</div>
+                        <div class="description">Alto engajamento - postagens em destaque</div>
+                        <button class="buy-button" data-package="1000 curtidas" data-price="15.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>2.000 curtidas ⚡</h3>
+                        <div class="price">R$ 28,00</div>
+                        <div class="description">Máxima visibilidade - viralize suas postagens</div>
+                        <button class="buy-button" data-package="2000 curtidas" data-price="28.00">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="combos-tab">
+                <div class="package-container">
+                    <div class="package combo">
+                        <h3>Combo Iniciante 🔥</h3>
+                        <div class="price">R$ 35,00</div>
+                        <div class="bonus">500 seguidores + 500 curtidas</div>
+                        <div class="description">Perfil equilibrado - crescimento completo</div>
+                        <button class="buy-button" data-package="Combo Iniciante: 500 seguidores + 500 curtidas" data-price="35.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo popular">
+                        <h3>Combo Turbo 🚀</h3>
+                        <div class="price"><span class="old-price">R$ 120,00</span> R$ 89,90</div>
+                        <div class="bonus">2.000 seguidores + 1.000 curtidas</div>
+                        <div class="description">Crescimento acelerado - resultados impressionantes</div>
+                        <button class="buy-button" data-package="Combo Turbo: 2000 seguidores + 1000 curtidas" data-price="89.90">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo">
+                        <h3>Combo Influencer 💎</h3>
+                        <div class="price">R$ 199,90</div>
+                        <div class="bonus">5.000 seguidores + 2.000 curtidas</div>
+                        <div class="description">Transformação completa - perfil de autoridade</div>
+                        <button class="buy-button" data-package="Combo Influencer: 5000 seguidores + 2000 curtidas" data-price="199.90">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package combo premium">
+                        <h3>Combo Premium ⭐</h3>
+                        <div class="price">R$ 349,90</div>
+                        <div class="bonus">10.000 seguidores Premium + 5.000 curtidas</div>
+                        <div class="description">Máximo destaque - engajamento garantido</div>
+                        <button class="buy-button" data-package="Combo Premium: 10000 seguidores Premium + 5000 curtidas" data-price="349.90">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="security">
+        <div class="container">
+            <h2>SEGURANÇA E CONFIABILIDADE</h2>
+            <div class="security-items">
+                <div class="security-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compra Segura</h3>
+                    <p>Seus dados e pagamento protegidos com criptografia avançada.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Entrega Imediata</h3>
+                    <p>Seus seguidores começam a chegar em até 5 minutos após a confirmação.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Seguidores Reais</h3>
+                    <p>Perfis genuínos e de alta qualidade para crescimento orgânico.</p>
+                </div>
+                
+                <div class="security-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe especializada pronta para ajudar a qualquer momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Comprei 2.000 seguidores e em menos de 1 hora já tinha recebido todos! Meu perfil agora atrai muito mais seguidores orgânicos."</p>
+                    <div class="client">- Ana Claudia, Influencer</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Estava há meses tentando crescer meu perfil profissional. Com a Turbo Lux, em um dia alcancei mais do que em 6 meses! Resultado incrível."</p>
+                    <div class="client">- Ricardo Moraes, Empreendedor</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Os seguidores premium realmente interagem com meu conteúdo. Meu engajamento aumentou 300% em duas semanas. Recomendo demais!"</p>
+                    <div class="client">- Carlos Henrique, Músico</div>
+                </div>
+            </div>
+
+            <div class="testimonials-gallery">
+                <div class="testimonial-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a1a1a'/><text x='150' y='100' font-family='Arial' font-size='20' fill='%23ffffff' text-anchor='middle'>Depoimento 1</text></svg>" alt="Depoimento 1">
+                    <div class="testimonial-img-content">
+                        <p>"Serviço rápido e eficiente! Recomendo!"</p>
+                        <div class="client">- @maria_silva</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a1a1a'/><text x='150' y='100' font-family='Arial' font-size='20' fill='%23ffffff' text-anchor='middle'>Depoimento 2</text></svg>" alt="Depoimento 2">
+                    <div class="testimonial-img-content">
+                        <p>"Seguidores de qualidade, entrega super rápida!"</p>
+                        <div class="client">- @joao_lima</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a1a1a'/><text x='150' y='100' font-family='Arial' font-size='20' fill='%23ffffff' text-anchor='middle'>Depoimento 3</text></svg>" alt="Depoimento 3">
+                    <div class="testimonial-img-content">
+                        <p>"Minhas postagens agora têm muito mais engajamento!"</p>
+                        <div class="client">- @carla_santos</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a1a1a'/><text x='150' y='100' font-family='Arial' font-size='20' fill='%23ffffff' text-anchor='middle'>Depoimento 4</text></svg>" alt="Depoimento 4">
+                    <div class="testimonial-img-content">
+                        <p>"Perfeito para quem quer crescer nas redes!"</p>
+                        <div class="client">- @pedro_alves</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>PERGUNTAS FREQUENTES</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como recebo os seguidores após a compra?</div>
+                <div class="faq-answer">
+                    <p>Após a confirmação do pagamento, os seguidores começam a ser entregues automaticamente em até 5 minutos. Você precisa nos informar seu @ do Instagram no processo de compra. A entrega é gradual para parecer mais natural e evitar qualquer problema com a plataforma.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Os seguidores são reais?</div>
+                <div class="faq-answer">
+                    <p>Sim! Trabalhamos apenas com seguidores reais e de alta qualidade. Nossos seguidores possuem fotos, posts
