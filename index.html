@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+continua o site e faça ele funcional ate o cliente copiar o pix mantenha <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -1128,509 +1128,105 @@
     </section>
     
     <section id="packages" class="packages">
-        <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo Lux - Seguidores Premium</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #ff0000;
-            --accent-color: #ff3333;
-            --text-color: #ffffff;
-            --gray-color: #1a1a1a;
-            --dark-red: #cc0000;
-            --gold: #FFD700;
-            --silver: #C0C0C0;
-            --bronze: #CD7F32;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', 'Roboto', sans-serif;
-        }
-        
-        body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            padding: 20px 0;
-            border-bottom: 2px solid var(--secondary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
-        }
-        
-        .logo {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--secondary-color);
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-        
-        .tagline {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #ccc;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 100px 0;
-            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7));
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: var(--secondary-color);
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-weight: 500;
-        }
-        
-        .redline-text {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-style: italic;
-            text-decoration: underline;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 18px 45px;
-            font-size: 1.3rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            margin-top: 20px;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-        }
-        
-        /* Packages Section */
-        .packages {
-            background-color: var(--gray-color);
-            position: relative;
-            overflow: hidden;
-            padding: 70px 0;
-        }
-        
-        .packages::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 0L100 100" stroke="%23222" stroke-width="1"/><path d="M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .packages h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            color: var(--secondary-color);
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 
+        <div class="container">
+            <h2>ESCOLHA SEU PACOTE DE SEGUIDORES</h2>
+            
+            <div class="package-tabs">
+                <button class="tab-button active" data-tab="followers">Seguidores</button>
+                <button class="tab-button" data-tab="premium">Seguidores Premium</button>
+                <button class="tab-button" data-tab="likes">Curtidas</button>
+                <button class="tab-button" data-tab="combos">Combos</button>
+            </div>
+            
+            <div class="tab-content active" id="followers-tab">
+                <div class="package-container">
+                    <div class="package">
+                        <h3>100 seguidores ✨</h3>
+                        <div class="price">R$ 4,00</div>
+                        <div class="description">Perfil básico - aumento rápido e eficaz</div>
+                        <button class="buy-button" data-package="100 seguidores" data-price="4.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>200 seguidores 🚀</h3>
+                        <div class="price">R$ 8,00</div>
+                        <div class="description">Aumento visível - ideal para começar</div>
+                        <button class="buy-button" data-package="200 seguidores" data-price="8.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>300 seguidores 🌟</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Crescimento consistente - melhor custo-benefício</div>
+                        <button class="buy-button" data-package="300 seguidores" data-price="12.00">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package popular">
+                        <h3>1.000 seguidores 💎</h3>
+                        <div class="price"><span class="old-price">R$ 48,90</span> R$ 24,90</div>
+                        <div class="description">Perfil relevante - alcance ampliado</div>
+                        <button class="buy-button" data-package="1000 seguidores" data-price="24.90">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>2.000 seguidores ⚡</h3>
+                        <div class="price">R$ 59,80</div>
+                        <div class="bonus">+300 curtidas de bônus</div>
+                        <div class="description">Presença fortalecida - impacto imediato</div>
+                        <button class="buy-button" data-package="2000 seguidores" data-price="59.80">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>3.000 seguidores 🔥</h3>
+                        <div class="price">R$ 89,70</div>
+                        <div class="bonus">+500 curtidas de bônus</div>
+                        <div class="description">Crescimento acelerado - maior visibilidade</div>
+                        <button class="buy-button" data-package="3000 seguidores" data-price="89.70">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>4.000 seguidores 🌈</h3>
+                        <div class="price">R$ 119,60</div>
+                        <div class="bonus">+700 curtidas de bônus</div>
+                        <div class="description">Alcance expandido - mais oportunidades</div>
+                        <button class="buy-button" data-package="4000 seguidores" data-price="119.60">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>5.000 seguidores 🏆</h3>
+                        <div class="price">R$ 149,50</div>
+                        <div class="bonus">+1.000 curtidas de bônus</div>
+                        <div class="description">Influência em crescimento - perfil destacado</div>
+                        <button class="buy-button" data-package="5000 seguidores" data-price="149.50">Comprar Agora</button>
+                    </div>
+                    
+                    <div class="package">
+                        <h3>10.000 seguidores 🏅</h3>
+                        <div class="price">R$ 299,00</div>
+                        <div class="bonus">+2.000 curtidas de bônus</div>
+                        <div class="description">Status de autoridade - transforme seu perfil</div>
+                        <button class="buy-button" data-package="10000 seguidores" data-price="299.00">Comprar Agora</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="security">
-        <div class="container">
-            <h2>SEGURANÇA E CONFIABILIDADE</h2>
-            <div class="security-items">
-                <div class="security-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Compra Segura</h3>
-                    <p>Seus dados e pagamento protegidos com criptografia avançada.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-truck"></i>
-                    <h3>Entrega Imediata</h3>
-                    <p>Seus seguidores começam a chegar em até 5 minutos após a confirmação.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-user-check"></i>
-                    <h3>Seguidores Reais</h3>
-                    <p>Perfis genuínos e de alta qualidade para crescimento orgânico.</p>
-                </div>
-                
-                <div class="security-item">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte 24/7</h3>
-                    <p>Equipe especializada pronta para ajudar a qualquer momento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <div class="container">
-            <h2>O QUE NOSSOS CLIENTES DIZEM</h2>
-            <div class="testimonial-container">
-                <div class="testimonial">
-                    <p>"Comprei 2.000 seguidores e em menos de 1 hora já tinha recebido todos! Meu perfil agora atrai muito mais seguidores orgânicos."</p>
-                    <div class="client">- Ana Claudia, Influencer</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"Estava há meses tentando crescer meu perfil profissional. Com a Turbo Lux, em um dia alcancei mais do que em 6 meses! Resultado incrível."</p>
-                    <div class="client">- Ricardo Moraes, Empreendedor</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"Os seguidores premium realmente interagem com meu conteúdo. Meu engajamento aumentou 300% em duas semanas. Recomendo demais!"</p>
-                    <div class="client">- Carlos Henrique, Músico</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="faq">
-        <div class="container">
-            <h2>PERGUNTAS FREQUENTES</h2>
             
-            <div class="faq-item">
-                <div class="faq-question">Como recebo os seguidores após a compra?</div>
-                <div class="faq-answer">
-                    <p>Após a confirmação do pagamento, os seguidores começam a ser entregues automaticamente em até 5 minutos. Você precisa nos informar seu @ do Instagram no processo de compra. A entrega é gradual para parecer mais natural e evitar qualquer problema com a plataforma.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Os seguidores são reais?</div>
-                <div class="faq-answer">
-                    <p>Sim! Trabalhamos apenas com seguidores reais e de alta qualidade. Nossos seguidores possuem fotos, posts e atividade normal na plataforma. Não utilizamos bots ou perfis falsos.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">É seguro para a minha conta?</div>
-                <div class="faq-answer">
-                    <p>Totalmente seguro. Utilizamos métodos avançados que respeitam todas as diretrizes do Instagram. Nossas técnicas não colocam em risco sua conta e são indetectáveis.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Quanto tempo leva para receber todos os seguidores?</div>
-                <div class="faq-answer">
-                    <p>Para pacotes menores (até 500 seguidores), a entrega é concluída em até 24 horas. Para pacotes maiores (acima de 1.000 seguidores), a entrega pode levar de 24 a 72 horas para ser concluída completamente, dependendo do tamanho do pacote.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Qual a diferença entre seguidores normais e premium?</div>
-                <div class="faq-answer">
-                    <p>Os seguidores premium possuem taxas de engajamento mais altas, perfis mais completos e maior probabilidade de interagir com seu conteúdo. São ideais para quem busca não apenas números, mas também aumento real no engajamento.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">E se eu não receber todos os seguidores?</div>
-                <div class="faq-answer">
-                    <p>Caso ocorra qualquer problema com sua entrega, nosso suporte técnico fará a revisão completa e garantirá que você receba todos os seguidores comprados. Temos política de garantia total para todos os nossos clientes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="payment">
-        <div class="container">
-            <h2>COMO COMPRAR</h2>
-            
-            <div class="payment-steps">
-                <div class="payment-step">
-                    <i class="fas fa-box"></i>
-                    <h3>1. Escolha seu pacote</h3>
-                    <p>Selecione o pacote de seguidores ou curtidas que melhor atende suas necessidades.</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>2. Faça o pagamento</h3>
-                    <p>Utilize PIX para pagamento instantâneo e aprovação imediata.</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-user-plus"></i>
-                    <h3>3. Informe seu @</h3>
-                    <p>Nos informe seu usuário do Instagram para envio dos seguidores.</p>
-                </div>
-                
-                <div class="payment-step">
-                    <i class="fas fa-rocket"></i>
-                    <h3>4. Receba instantaneamente</h3>
-                    <p>Pronto! Seus seguidores começaram a chegar em menos de 5 minutos.</p>
-                </div>
-            </div>
-            
-            <div class="pix-info">
-                <h3>PAGAMENTO VIA PIX</h3>
-                <p>Pagamento instantâneo, aprovado em segundos. Utilize a chave PIX abaixo para realizar sua compra:</p>
-                
-                <div class="pix-key" id="pixKey">00020126580014br.gov.bcb.pix0136c873d56a-7f5a-4b7a-9465-3a1c8d7a7c9f5204000053039865802BR5913TURBO LUX LTDA6008BRASILIA62070503***6304E7A0</div>
-                
-                <button class="copy-btn" id="copyPixButton">
-                    <i class="fas fa-copy"></i> Copiar Chave PIX
-                </button>
-                
-                <div class="qrcode-container">
-                    <div id="qrcode"></div>
-                </div>
-                
-                <p>Após o pagamento, seu pedido será processado automaticamente e os seguidores começarão a chegar em até 5 minutos.</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Termos de Uso</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Suporte</a>
-            </div>
-            
-            <p>© 2023 Turbo Lux - Todos os direitos reservados</p>
-            <p class="copyright">Este serviço não é afiliado ao Instagram ou qualquer outra rede social.</p>
-        </div>
-    </footer>
-    
-    <div class="modal" id="purchaseModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <h2>FINALIZAR COMPRA</h2>
-            
-            <div class="modal-pix-info">
-                <p>Você está adquirindo:</p>
-                <div class="modal-package" id="modalPackage"></div>
-                <div class="modal-price" id="modalPrice"></div>
-            </div>
-            
-            <form id="purchaseForm">
-                <div class="form-group">
-                    <label for="instagram">Seu @ do Instagram</label>
-                    <input type="text" id="instagram" required placeholder="@seuusuario">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Seu e-mail</label>
-                    <input type="email" id="email" required placeholder="seu@email.com">
-                </div>
-                
-                <div class="modal-pix-info">
-                    <p>Utilize a chave PIX abaixo para pagamento:</p>
-                    <div class="modal-pix-key" id="modalPixKey">00020126580014br.gov.bcb.pix0136c873d56a-7f5a-4b7a-9465-3a1c8d7a7c9f5204000053039865802BR5913TURBO LUX LTDA6008BRASILIA62070503***6304E7A0</div>
-                    <button type="button" class="modal-copy-btn" id="modalCopyPixButton">
-                        <i class="fas fa-copy"></i> Copiar Chave PIX
-                    </button>
-                </div>
-                
-                <button type="submit" class="confirm-purchase">Já efetuei o pagamento</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Configuração das abas de pacotes
-        document.addEventListener('DOMContentLoaded', function() {
-            // Controle das abas
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.getAttribute('data-tab');
+            <div class="tab-content" id="premium-tab">
+                <div class="package-container">
+                    <div class="package premium">
+                        <h3>100 seguidores Premium ✨</h3>
+                        <div class="price">R$ 12,00</div>
+                        <div class="description">Seguidores de alta qualidade com maior taxa de engajamento</div>
+                        <button class="buy-button" data-package="100 seguidores Premium" data-price="12.00">Comprar Agora</button>
+                    </div>
                     
-                    // Remove a classe active de todos os botões e conteúdos
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
+                    <div class="package premium">
+                        <h3>200 seguidores Premium 🚀</h3>
+                        <div class="price">R$ 24,00</div>
+                        <div class="description">Perfis verificados e com alta taxa de interação</div>
+                        <button class="buy-button" data-package="200 seguidores Premium" data-price="24.00">Comprar Agora</button>
+                    </div>
                     
-                    // Adiciona a classe active ao botão clicado e ao conteúdo correspondente
-                    button.classList.add('active');
-                    document.getElementById(`${tabId}-tab`).classList.add('active');
-                });
-            });
-            
-            // Controle do FAQ (acordeão)
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const isOpen = answer.classList.contains('open');
-                    
-                    // Fecha todas as respostas
-                    document.querySelectorAll('.faq-answer').forEach(ans => {
-                        ans.classList.remove('open');
-                        ans.previousElementSibling.classList.remove('active');
-                    });
-                    
-                    // Abre a resposta clicada se não estava aberta
-                    if (!isOpen) {
-                        answer.classList.add('open');
-                        question.classList.add('active');
-                    }
-                });
-            });
-            
-            // Controle do modal de compra
-            const buyButtons = document.querySelectorAll('.buy-button');
-            const modal = document.getElementById('purchaseModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalPackage = document.getElementById('modalPackage');
-            const modalPrice = document.getElementById('modalPrice');
-            const purchaseForm = document.getElementById('purchaseForm');
-            const copyPixButton = document.getElementById('copyPixButton');
-            const modalCopyPixButton = document.getElementById('modalCopyPixButton');
-            const pixKey = document.getElementById('pixKey');
-            const modalPixKey = document.getElementById('modalPixKey');
-            
-            // Função para copiar a chave PIX
-            function copyPixKey() {
-                const textArea = document.createElement('textarea');
-                textArea.value = pixKey.textContent;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                // Feedback visual
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-check"></i> Chave Copiada!';
-                
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                }, 2000);
-            }
-            
-            copyPixButton.addEventListener('click', copyPixKey);
-            modalCopyPixButton.addEventListener('click', copyPixKey);
-            
-            // Abrir modal ao clicar em comprar
-            buyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const package = button.getAttribute('data-package');
-                    const price = button.getAttribute('data-price');
-                    
-                    modalPackage.textContent = package;
-                    modalPrice.textContent = `R$ ${price}`;
-                    
-                    modal.style.display = 'flex';
-                });
-            });
-            
-            // Fechar modal
-            closeModal.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-            
-            // Fechar modal clicando fora dele
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Processar formulário de compra
-            purchaseForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const instagram = document.getElementById('instagram').value;
-                const email = document.getElementById('email').value;
-                
-                // Aqui você normalmente enviaria os dados para um backend
-                // Como exemplo, vamos apenas mostrar um alerta
-                alert(`Pedido processado!\nInstagram: ${instagram}\nE-mail: ${email}\n\nObrigado pela compra! Em até 5 minutos seus seguidores começarão a chegar.`);
-                
-                // Fechar o modal
-                modal.style.display = 'none';
-                
-                // Limpar o formulário
-                purchaseForm.reset();
-            });
-            
-            // Gerar QR Code PIX
-            const qrcode = new QRCode(document.getElementById('qrcode'), {
-                text: '00020126580014br.gov.bcb.pix0136c873d56a-7f5a-4b7a-9465-3a1c8d7a7c9f5204000053039865802BR5913TURBO LUX LTDA6008BRASILIA62070503***6304E7A0',
-                width: 150,
-                height: 150
-            });
-            
-            // Animação de partículas
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Posição aleatória
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                
-                // Tamanho aleatório
-                const size = Math.random() * 3 + 1;
-                
-                // Atraso aleatório para animação
-                const delay = Math.random() * 10;
-                
-                particle.style.left = `${posX}vw`;
-                particle.style.top = `${posY}vh`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.animationDelay = `${delay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        });
-    </script>
-</body>
-</html>
+                    <div class="package premium">
+                        <h3>500 seguidores Premium 💎</h3>
+                        <div class="price">R$ 60,00</div>
+                        <div class="description">Aumento significativo
